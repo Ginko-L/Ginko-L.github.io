@@ -1,2 +1,2 @@
-# ginko.github.io
+# Ginko-L.github.io
 My blog
