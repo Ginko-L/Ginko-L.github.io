@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux pipe() 详解</title>
+      <link href="/2022/02/26/linux-pipe-xiang-jie/"/>
+      <url>/2022/02/26/linux-pipe-xiang-jie/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/oguro/article/details/53841949">https://blog.csdn.net/oguro/article/details/53841949</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>article title</title>
       <link href="/2022/02/25/article-title-1/"/>
       <url>/2022/02/25/article-title-1/</url>
