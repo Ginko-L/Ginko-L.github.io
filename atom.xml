@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-03-04T03:35:20.114Z</updated>
+  <updated>2022-03-11T23:01:28.207Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C 函数参数为void和函数无参数的区别</title>
+    <link href="https://ginko-l.github.io/2022/03/11/c-han-shu-can-shu-wei-void-he-han-shu-wu-can-shu-de-qu-bie/"/>
+    <id>https://ginko-l.github.io/2022/03/11/c-han-shu-can-shu-wei-void-he-han-shu-wu-can-shu-de-qu-bie/</id>
+    <published>2022-03-11T05:00:00.000Z</published>
+    <updated>2022-03-11T23:01:28.207Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;int function() 和 int function(void) 的区别？&lt;/p&gt;
+&lt;p&gt;来源： &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="https://ginko-l.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="C C++" scheme="https://ginko-l.github.io/tags/C-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://ginko-l.github.io/2022/03/07/jiao-cha-shang/"/>
+    <id>https://ginko-l.github.io/2022/03/07/jiao-cha-shang/</id>
+    <published>2022-03-07T16:17:09.252Z</published>
+    <updated>2022-03-07T16:17:09.294Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;交叉熵&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>腾讯面试问题记录</title>

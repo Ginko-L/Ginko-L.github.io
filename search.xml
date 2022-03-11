@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>C 函数参数为void和函数无参数的区别</title>
+      <link href="/2022/03/11/c-han-shu-can-shu-wei-void-he-han-shu-wu-can-shu-de-qu-bie/"/>
+      <url>/2022/03/11/c-han-shu-can-shu-wei-void-he-han-shu-wu-can-shu-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<p>int function() 和 int function(void) 的区别？</p><p>来源： <a href="https://stackoverflow.com/questions/693788/is-it-better-to-use-c-void-arguments-void-foovoid-or-not-void-foo">https://stackoverflow.com/questions/693788/is-it-better-to-use-c-void-arguments-void-foovoid-or-not-void-foo</a></p><p>void foo(void);<br>That is the correct way to say “no parameters” in C, and it also works in C++.</p><p>But:</p><p>void foo();<br>Means different things in C and C++! In C it means “could take any number of parameters of unknown types”, and in C++ it means the same as foo(void).</p><p>Variable argument list functions are inherently un-typesafe and should be avoided where possible.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2022/03/07/jiao-cha-shang/"/>
+      <url>/2022/03/07/jiao-cha-shang/</url>
+      
+        <content type="html"><![CDATA[<p>交叉熵</p><p><a href="https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82">https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>腾讯面试问题记录</title>
       <link href="/2022/03/03/mian-shi-wen-ti/"/>
       <url>/2022/03/03/mian-shi-wen-ti/</url>
