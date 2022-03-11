@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>自学 MIT 6.S081 Operating system engineering 的一些资料</title>
+      <link href="/2022/03/11/zi-xue-mit-6.s081-operating-system-engineering-de-yi-xie-zi-liao/"/>
+      <url>/2022/03/11/zi-xue-mit-6.s081-operating-system-engineering-de-yi-xie-zi-liao/</url>
+      
+        <content type="html"><![CDATA[<p>自学 MIT 6.S081 Operating system engineering 的一些资料</p><p>官网：<a href="https://pdos.csail.mit.edu/6.828/2021/schedule.html">https://pdos.csail.mit.edu/6.828/2021/schedule.html</a></p><p>课程视频翻译：<a href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/lec01-introduction-and-examples/1.1-ke-cheng-jian-jie">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/lec01-introduction-and-examples/1.1-ke-cheng-jian-jie</a></p><p>lab 答案参考：</p><p><a href="https://miaochenlu.github.io/2020/12/16/xv6-lab2/">https://miaochenlu.github.io/2020/12/16/xv6-lab2/</a></p><p><a href="https://github.com/PKUFlyingPig/MIT6.S081-2020fall">https://github.com/PKUFlyingPig/MIT6.S081-2020fall</a></p><p><a href="http://xv6.dgs.zone/labs/requirements/lab1.html">http://xv6.dgs.zone/labs/requirements/lab1.html</a></p><p><a href="https://blog.csdn.net/u013577996/article/details/108679997">https://blog.csdn.net/u013577996/article/details/108679997</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> OS, MIT 6.S081 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2022/03/07/jiao-cha-shang/"/>
       <url>/2022/03/07/jiao-cha-shang/</url>
