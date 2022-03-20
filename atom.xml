@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-03-11T23:01:28.207Z</updated>
+  <updated>2022-03-20T20:38:43.938Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>亚马逊中国面经收集</title>
+    <link href="https://ginko-l.github.io/2022/03/20/ya-ma-xun-zhong-guo-mian-jing-shou-ji/"/>
+    <id>https://ginko-l.github.io/2022/03/20/ya-ma-xun-zhong-guo-mian-jing-shou-ji/</id>
+    <published>2022-03-20T04:00:00.000Z</published>
+    <updated>2022-03-20T20:38:43.938Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;亚马逊中国面经收集&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>C 函数参数为void和函数无参数的区别</title>
@@ -47,7 +73,7 @@
     <link href="https://ginko-l.github.io/2022/03/11/zi-xue-mit-6.s081-operating-system-engineering-de-yi-xie-zi-liao/"/>
     <id>https://ginko-l.github.io/2022/03/11/zi-xue-mit-6.s081-operating-system-engineering-de-yi-xie-zi-liao/</id>
     <published>2022-03-11T05:00:00.000Z</published>
-    <updated>2022-03-11T23:19:38.005Z</updated>
+    <updated>2022-03-11T23:24:22.406Z</updated>
     
     
       
@@ -64,7 +90,33 @@
     <category term="操作系统" scheme="https://ginko-l.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-    <category term="OS, MIT 6.S081" scheme="https://ginko-l.github.io/tags/OS-MIT-6-S081/"/>
+    <category term="OS" scheme="https://ginko-l.github.io/tags/OS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dot operator vs arrow in C</title>
+    <link href="https://ginko-l.github.io/2022/03/11/dot-operator-vs-arrow-in-c/"/>
+    <id>https://ginko-l.github.io/2022/03/11/dot-operator-vs-arrow-in-c/</id>
+    <published>2022-03-11T05:00:00.000Z</published>
+    <updated>2022-03-12T01:14:58.815Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;. (dot operator) vs -&amp;gt; (arrow) in C&lt;/p&gt;
+&lt;p&gt;. 和 -&amp;gt; 都可以用来得到struct 变量的member。&lt;br&gt;-&amp;gt;配合struct 变量的指针来引用它的member&lt;br&gt;.配合struct</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="https://ginko-l.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="C" scheme="https://ginko-l.github.io/tags/C/"/>
     
   </entry>
   
