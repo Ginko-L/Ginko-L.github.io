@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-03-20T20:38:43.938Z</updated>
+  <updated>2022-03-22T01:34:05.103Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二分查找边界问题</title>
+    <link href="https://ginko-l.github.io/2022/03/21/er-fen-cha-zhao-bian-jie-wen-ti/"/>
+    <id>https://ginko-l.github.io/2022/03/21/er-fen-cha-zhao-bian-jie-wen-ti/</id>
+    <published>2022-03-21T04:00:00.000Z</published>
+    <updated>2022-03-22T01:34:05.103Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;二分查找边界问题&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://ginko-l.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法题" scheme="https://ginko-l.github.io/tags/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>亚马逊中国面经收集</title>
