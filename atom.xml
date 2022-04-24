@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-03-22T01:34:05.103Z</updated>
+  <updated>2022-04-23T00:24:42.542Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://ginko-l.github.io/2022/04/20/ba-gu-wen-zheng-li/"/>
+    <id>https://ginko-l.github.io/2022/04/20/ba-gu-wen-zheng-li/</id>
+    <published>2022-04-21T02:34:07.326Z</published>
+    <updated>2022-04-23T00:24:42.542Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;八股文整理&lt;/p&gt;
+&lt;p&gt;C语言学习 作用域和生存期&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://ginko-l.github.io/2022/04/09/dfs-bfs/"/>
+    <id>https://ginko-l.github.io/2022/04/09/dfs-bfs/</id>
+    <published>2022-04-10T01:08:14.142Z</published>
+    <updated>2022-04-10T01:08:14.169Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;graph traversal（graph DFS&amp;#x2F;BFS） 的时候才会用到3种颜色标记。这样可以detect circle.</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>二分查找边界问题</title>
