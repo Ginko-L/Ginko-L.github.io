@@ -4,26 +4,25 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2022/04/20/ba-gu-wen-zheng-li/"/>
-      <url>/2022/04/20/ba-gu-wen-zheng-li/</url>
-      
-        <content type="html"><![CDATA[<p>八股文整理</p><p>C语言学习 作用域和生存期<br><a href="https://www.jianshu.com/p/fe2782e04401">https://www.jianshu.com/p/fe2782e04401</a></p><p>高频ML&#x2F;DL面试题<br><a href="https://blog.csdn.net/qq_35812205/article/details/117047412">https://blog.csdn.net/qq_35812205/article/details/117047412</a></p><p>Adam and SGD<br><a href="https://blog.csdn.net/jiachen0212/article/details/80086926">https://blog.csdn.net/jiachen0212/article/details/80086926</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2022/04/09/dfs-bfs/"/>
-      <url>/2022/04/09/dfs-bfs/</url>
+      <title>graph traversal BFS/DFS 颜色标记</title>
+      <link href="/2022/04/26/dfs-bfs/"/>
+      <url>/2022/04/26/dfs-bfs/</url>
       
         <content type="html"><![CDATA[<p>graph traversal（graph DFS&#x2F;BFS） 的时候才会用到3种颜色标记。这样可以detect circle. 树或者矩阵或者其他什么的DFS&#x2F;BFS似乎不用3种颜色标记。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法题 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -35,6 +34,31 @@
       <url>/2022/03/21/er-fen-cha-zhao-bian-jie-wen-ti/</url>
       
         <content type="html"><![CDATA[<p>二分查找边界问题<br><a href="https://leetcode-cn.com/problems/binary-search/solution/er-fen-cha-zhao-de-xun-huan-bu-bian-liang-zhi-yao-/">https://leetcode-cn.com/problems/binary-search/solution/er-fen-cha-zhao-de-xun-huan-bu-bian-liang-zhi-yao-/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二分查找边界问题</title>
+      <link href="/2022/03/21/ba-gu-wen-zheng-li/"/>
+      <url>/2022/03/21/ba-gu-wen-zheng-li/</url>
+      
+        <content type="html"><![CDATA[<p>八股文整理</p><p>机器学习：</p><p>高频ML&#x2F;DL面试题<br><a href="https://blog.csdn.net/qq_35812205/article/details/117047412">https://blog.csdn.net/qq_35812205/article/details/117047412</a></p><p>Adam and SGD<br><a href="https://blog.csdn.net/jiachen0212/article/details/80086926">https://blog.csdn.net/jiachen0212/article/details/80086926</a></p><p>激活函数性质<br><a href="https://blog.csdn.net/qq_18310041/article/details/91042085">https://blog.csdn.net/qq_18310041/article/details/91042085</a></p><p>GRU<br><a href="https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be">https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be</a></p><p>Activation function<br>Sigmoid vs softmax:<br>Sigmoid&#x2F; logistic function: two class classification<br>Softmax: multiclass classification,当two class 的时候，softmax 就是 sigmoid。 </p><p>交叉熵 cross entropy 解释<br><a href="https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82">https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82</a></p><p>Bidirectional RNN<br><a href="https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66">https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66</a></p><p>其他：</p><p>C语言学习 作用域和生存期<br><a href="https://www.jianshu.com/p/fe2782e04401">https://www.jianshu.com/p/fe2782e04401</a></p><p>Java python 的区别<br><a href="http://bookshadow.com/weblog/2014/05/17/python-vs-java-key-differences/">http://bookshadow.com/weblog/2014/05/17/python-vs-java-key-differences/</a></p><p>Wait和sleep的区别<br><a href="https://www.jianshu.com/p/25e959037eed">https://www.jianshu.com/p/25e959037eed</a></p><p>聊聊B树和B+树 数据结构是什么  查询复杂度是多少<br><a href="https://www.cnblogs.com/nullzx/p/8729425.html#:~:text=B%E6%A0%91%E4%B9%9F%E7%A7%B0B,%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E3%80%82">https://www.cnblogs.com/nullzx/p/8729425.html#:~:text=B%E6%A0%91%E4%B9%9F%E7%A7%B0B,%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E3%80%82</a></p><p>乐观锁 悲观锁<br><a href="https://www.cnblogs.com/kismetv/p/10787228.html">https://www.cnblogs.com/kismetv/p/10787228.html</a></p><p>计算机网络：<br>Cookie, session<br><a href="https://www.zhihu.com/question/19786827">https://www.zhihu.com/question/19786827</a></p><p>客户端发送网络请求，到拿到响应的整个过程：<br><a href="https://blog.csdn.net/zjkC050818/article/details/78345819">https://blog.csdn.net/zjkC050818/article/details/78345819</a></p><p>Http和https的区别， https的原理：<br><a href="https://blog.csdn.net/xionghuixionghui/article/details/68569282#:~:text=HTTPS%E5%92%8CHTTP%E7%9A%84%E5%8C%BA%E5%88%AB,80%EF%BC%8C%E5%90%8E%E8%80%85%E6%98%AF443%E3%80%82">https://blog.csdn.net/xionghuixionghui/article/details/68569282#:~:text=HTTPS%E5%92%8CHTTP%E7%9A%84%E5%8C%BA%E5%88%AB,80%EF%BC%8C%E5%90%8E%E8%80%85%E6%98%AF443%E3%80%82</a></p><p>七层模型 四层模型<br><a href="https://blog.csdn.net/qq_39521554/article/details/79894501">https://blog.csdn.net/qq_39521554/article/details/79894501</a></p><p>流量控制 拥塞控制<br><a href="https://zhuanlan.zhihu.com/p/37379780">https://zhuanlan.zhihu.com/p/37379780</a></p><p>三次握手 四次挥手<br><a href="https://hit-alibaba.github.io/interview/basic/network/TCP.html">https://hit-alibaba.github.io/interview/basic/network/TCP.html</a></p><p><a href="https://zhuanlan.zhihu.com/p/53374516">https://zhuanlan.zhihu.com/p/53374516</a></p><p>TCP与UDP区别总结：<br>1、TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接<br>2、TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保   证可靠交付<br>3、TCP面向字节流，实际上是TCP把数据看成一连串无结构的字节流;UDP是面向报文的<br>  UDP没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如IP电话，实时视频会议等）<br>4、每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信<br>5、TCP首部开销20字节;UDP的首部开销小，只有8个字节<br>6、TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道<br>————————————————<br>版权声明：本文为CSDN博主「Li_Ning_」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/Li_Ning_/article/details/52117463">https://blog.csdn.net/Li_Ning_/article/details/52117463</a></p>]]></content>
       
       
       <categories>
