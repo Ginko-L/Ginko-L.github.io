@@ -46,7 +46,7 @@
     <link href="https://ginko-l.github.io/2022/04/26/ba-gu-wen-zheng-li/"/>
     <id>https://ginko-l.github.io/2022/04/26/ba-gu-wen-zheng-li/</id>
     <published>2022-04-26T04:00:00.000Z</published>
-    <updated>2022-04-27T00:47:28.281Z</updated>
+    <updated>2022-05-07T01:41:08.614Z</updated>
     
     
       
@@ -65,6 +65,32 @@
     
     
     <category term="八股文， 面试" scheme="https://ginko-l.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87%EF%BC%8C-%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PG面试</title>
+    <link href="https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/"/>
+    <id>https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/</id>
+    <published>2022-04-26T04:00:00.000Z</published>
+    <updated>2022-05-07T01:42:34.585Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;PG ML&amp;#x2F;data engineer 面经&lt;/p&gt;
+&lt;p&gt;LSTM 与RNN的区别？&lt;br&gt;为什么LSTM能缓解weight decay？从激活函数的角度回答&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
