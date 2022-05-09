@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>hulu 面经</title>
+      <link href="/2022/05/08/hulu-mian-jing/"/>
+      <url>/2022/05/08/hulu-mian-jing/</url>
+      
+        <content type="html"><![CDATA[<p>hulu 面经<br>给定二叉树的前序和中序遍历，递归地反转二叉树的左右子树，输出反转后的二叉树的前序遍历。</p><p>hulu 整理的别人的面经<br><a href="https://blog.csdn.net/smileiam/article/details/88732245">https://blog.csdn.net/smileiam/article/details/88732245</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面经 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面经 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>graph traversal BFS/DFS 颜色标记</title>
       <link href="/2022/04/26/dfs-bfs/"/>
       <url>/2022/04/26/dfs-bfs/</url>
       
-        <content type="html"><![CDATA[<p>graph traversal（graph DFS&#x2F;BFS） 的时候才会用到3种颜色标记。这样可以detect circle. 树或者矩阵或者其他什么的DFS&#x2F;BFS似乎不用3种颜色标记。</p>]]></content>
+        <content type="html"><![CDATA[<p>graph traversal（graph DFS&#x2F;BFS） 的时候才会用到3种颜色标记。这样可以detect circle. 树或者矩阵或者其他什么的DFS&#x2F;BFS似乎不用3种颜色标记。</p><p>判断一个图是否有环及相关LeetCode题目<br><a href="https://www.jianshu.com/p/acbd585f5c60">https://www.jianshu.com/p/acbd585f5c60</a></p>]]></content>
       
       
       <categories>
