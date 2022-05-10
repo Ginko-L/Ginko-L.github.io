@@ -47,14 +47,14 @@
     <link href="https://ginko-l.github.io/2022/04/26/dfs-bfs/"/>
     <id>https://ginko-l.github.io/2022/04/26/dfs-bfs/</id>
     <published>2022-04-26T04:00:00.000Z</published>
-    <updated>2022-05-09T00:49:58.199Z</updated>
+    <updated>2022-05-10T00:32:33.616Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;graph traversal（graph DFS&amp;#x2F;BFS） 的时候才会用到3种颜色标记。这样可以detect circle.</summary>
+    <summary type="html">&lt;p&gt;graph traversal（graph DFS&amp;#x2F;BFS） 的时候才会用到3种颜色标记。这样可以detect circle. 树或者矩阵或者其他什么的DFS&amp;#x2F;BFS似乎不用3种颜色标记。（tricolor algorithm）&lt;br&gt;&lt;a</summary>
         
       
     
