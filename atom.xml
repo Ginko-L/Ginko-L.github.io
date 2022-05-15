@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-05-09T01:04:47.684Z</updated>
+  <updated>2022-05-15T20:31:04.599Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些总是记不住的python语法</title>
+    <link href="https://ginko-l.github.io/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/"/>
+    <id>https://ginko-l.github.io/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/</id>
+    <published>2022-05-15T04:00:00.000Z</published>
+    <updated>2022-05-15T20:31:04.599Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一些总是记不住的python语法&lt;/p&gt;
+&lt;p&gt;将多个list zip起来，并且按照一个list的元素把所有list排序。&lt;br&gt;e.g. &lt;/p&gt;
+&lt;p&gt;list1 &amp;#x3D; [“c”, “b”, “d”, “a”]&lt;br&gt;list2 &amp;#x3D; [2, 3,</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="https://ginko-l.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="编程语言, Python, 语法" scheme="https://ginko-l.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80-Python-%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://ginko-l.github.io/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/"/>
+    <id>https://ginko-l.github.io/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/</id>
+    <published>2022-05-11T19:25:57.805Z</published>
+    <updated>2022-05-11T19:25:57.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;leetcode 114&lt;br&gt;leetcode</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://ginko-l.github.io/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/"/>
+    <id>https://ginko-l.github.io/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/</id>
+    <published>2022-05-11T19:18:39.254Z</published>
+    <updated>2022-05-11T21:20:30.708Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;看别人面经贴里的算法题&lt;/p&gt;
+&lt;p&gt;Disney+hotstar&lt;br&gt;leetcode 136&lt;br&gt;最简单的方法是用异或操作。&lt;/p&gt;
+&lt;p&gt;follow up: 找出数组中只出现一次的两个数，其他数都出现两次&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>hulu 面经</title>
@@ -419,52 +490,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://ginko-l.github.io/2022/02/25/hello-world/"/>
-    <id>https://ginko-l.github.io/2022/02/25/hello-world/</id>
-    <published>2022-02-25T22:04:57.116Z</published>
-    <updated>2022-02-25T22:04:57.116Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>博客搭建教程</title>
-    <link href="https://ginko-l.github.io/2022/02/25/bo-ke-da-jian-jiao-cheng/"/>
-    <id>https://ginko-l.github.io/2022/02/25/bo-ke-da-jian-jiao-cheng/</id>
-    <published>2022-02-25T05:00:00.000Z</published>
-    <updated>2022-02-26T14:59:52.798Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;我参考的教程：&lt;br&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/35668237&quot;&gt;https://zhuanlan.zhihu.com/p/35668237&lt;/a&gt; (主要)&lt;br&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="教程" scheme="https://ginko-l.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="教程" scheme="https://ginko-l.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

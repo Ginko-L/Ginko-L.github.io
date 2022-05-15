@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title>一些总是记不住的python语法</title>
+      <link href="/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/"/>
+      <url>/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/</url>
+      
+        <content type="html"><![CDATA[<p>一些总是记不住的python语法</p><p>将多个list zip起来，并且按照一个list的元素把所有list排序。<br>e.g. </p><p>list1 &#x3D; [“c”, “b”, “d”, “a”]<br>list2 &#x3D; [2, 3, 1, 4]</p><p>排序过后的结果：<br>[‘a’, ‘b’, ‘c’, ‘d’]<br>[4, 3, 2, 1]</p><p>程序如下：<br>list1 &#x3D; [“c”, “b”, “d”, “a”]<br>list2 &#x3D; [2, 3, 1, 4]</p><p>zipped_lists &#x3D; zip(list1, list2) #注意：按谁排序谁作为zip()的第一个参数！<br>sorted_pairs &#x3D; sorted(zipped_lists)</p><p>tuples &#x3D; zip(*sorted_pairs)<br>list1, list2 &#x3D; [ list(tuple) for tuple in  tuples]</p><p>print(list1)<br>OUTPUT<br>[‘a’, ‘b’, ‘c’, ‘d’]<br>print(list2)<br>OUTPUT<br>[4, 3, 2, 1]</p><p>zip(<em>) zip中</em>的用法相当与unpack.<br>来源：<br><a href="https://www.adamsmith.haus/python/answers/how-to-sort-two-lists-together-in-python">https://www.adamsmith.haus/python/answers/how-to-sort-two-lists-together-in-python</a><br><a href="https://stackoverflow.com/questions/9764298/how-to-sort-two-lists-which-reference-each-other-in-the-exact-same-way">https://stackoverflow.com/questions/9764298/how-to-sort-two-lists-which-reference-each-other-in-the-exact-same-way</a></p><p>sort dictionay by key in python:<br>sorted_dict &#x3D; dict(sorted(unsorted_dict.items()))<br>来源（高赞下的评论）：<br><a href="https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key">https://stackoverflow.com/questions/9001509/how-can-i-sort-a-dictionary-by-key</a></p><p>sort dictionay by value in python（我觉得第二种更好）:</p><blockquote><blockquote><blockquote><p>x &#x3D; {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}<br>{k: v for k, v in sorted(x.items(), key&#x3D;lambda item: item[1])}<br>{0: 0, 2: 1, 1: 2, 4: 3, 3: 4}</p></blockquote></blockquote></blockquote><p>or</p><blockquote><blockquote><blockquote><p>dict(sorted(x.items(), key&#x3D;lambda item: item[1]))<br>{0: 0, 2: 1, 1: 2, 4: 3, 3: 4}</p></blockquote></blockquote></blockquote><p>来源：<br><a href="https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value">https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value</a></p><p>python list of tuples 按照多个条件排序：<br>对tuple进行排序，先按照第一个元素升序，如果第一个元素相同，再按照第二个元素降序排列。</p><p>L &#x3D; [(12,12),(34,13),(32,15),(12,24),(32,64),(32,11)]<br>L.sort(key&#x3D;lambda x: (x[0], -x[1]))<br>print(L)<br>[(12, 24), (12, 12), (32, 64), (32, 15), (32, 11), (34, 13)]</p><p>如果想先按第二个元素升序再按第一个元素升序：<br>L1 &#x3D; sorted(L, key&#x3D;lambda x: (x[1], x[0]))<br>来源：<br><a href="https://blog.csdn.net/y12345678904/article/details/77507552">https://blog.csdn.net/y12345678904/article/details/77507552</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编程语言, Python, 语法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/"/>
+      <url>/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/</url>
+      
+        <content type="html"><![CDATA[<p>leetcode 114<br>leetcode 1110</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/"/>
+      <url>/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/</url>
+      
+        <content type="html"><![CDATA[<p>看别人面经贴里的算法题</p><p>Disney+hotstar<br>leetcode 136<br>最简单的方法是用异或操作。</p><p>follow up: 找出数组中只出现一次的两个数，其他数都出现两次<br><a href="https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/solution/jian-zhi-offer-56-i-shu-zu-zhong-shu-zi-tykom/">https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/solution/jian-zhi-offer-56-i-shu-zu-zhong-shu-zi-tykom/</a></p><p>该算法里有点难理解的地方，解释如下：<br>m 标记了x, y 从低位到高位（从右到左）第一位不同的比特。（x，y在该比特一个为1，一个为0）.<br>遍历整个数组，数组里的每个数和m 做与运算，该比特为1的被分为一组，该比特为0的被分为一组，所以这样就保证了x,y被分为两个不同的组。</p><p>leetcode 958</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hulu 面经</title>
       <link href="/2022/05/08/hulu-mian-jing/"/>
       <url>/2022/05/08/hulu-mian-jing/</url>
