@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/05/17/dimensionality-reduction-fang-fa/"/>
+      <url>/2022/05/17/dimensionality-reduction-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<p>dimensionality reduction 方法<br><a href="https://chenrudan.github.io/blog/2016/04/01/dimensionalityreduction.html">https://chenrudan.github.io/blog/2016/04/01/dimensionalityreduction.html</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一些总是记不住的python语法</title>
       <link href="/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/"/>
       <url>/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/</url>
@@ -46,7 +59,7 @@
       <link href="/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/"/>
       <url>/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/</url>
       
-        <content type="html"><![CDATA[<p>看别人面经贴里的算法题</p><p>Disney+hotstar<br>leetcode 136<br>最简单的方法是用异或操作。</p><p>follow up: 找出数组中只出现一次的两个数，其他数都出现两次<br><a href="https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/solution/jian-zhi-offer-56-i-shu-zu-zhong-shu-zi-tykom/">https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/solution/jian-zhi-offer-56-i-shu-zu-zhong-shu-zi-tykom/</a></p><p>该算法里有点难理解的地方，解释如下：<br>m 标记了x, y 从低位到高位（从右到左）第一位不同的比特。（x，y在该比特一个为1，一个为0）.<br>遍历整个数组，数组里的每个数和m 做与运算，该比特为1的被分为一组，该比特为0的被分为一组，所以这样就保证了x,y被分为两个不同的组。</p><p>leetcode 958</p><p>Lintcode 437 <a href="https://www.lintcode.com/problem/437/">https://www.lintcode.com/problem/437/</a> (和leetcode 410相同)<br>与该题类似的一道题：<br>给你一个数组，找出K-1个数，使得删去这K-1个数之后得到的K个子数组和相等。（前缀和数组）</p>]]></content>
+        <content type="html"><![CDATA[<p>看别人面经贴里的算法题</p><p>Disney+hotstar<br>leetcode 136<br>最简单的方法是用异或操作。</p><p>follow up: 找出数组中只出现一次的两个数，其他数都出现两次<br><a href="https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/solution/jian-zhi-offer-56-i-shu-zu-zhong-shu-zi-tykom/">https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/solution/jian-zhi-offer-56-i-shu-zu-zhong-shu-zi-tykom/</a></p><p>该算法里有点难理解的地方，解释如下：<br>m 标记了x, y 从低位到高位（从右到左）第一位不同的比特。（x，y在该比特一个为1，一个为0）.<br>遍历整个数组，数组里的每个数和m 做与运算，该比特为1的被分为一组，该比特为0的被分为一组，所以这样就保证了x,y被分为两个不同的组。</p><p>leetcode 958</p><p>Lintcode 437 <a href="https://www.lintcode.com/problem/437/">https://www.lintcode.com/problem/437/</a> (和leetcode 410相同)<br>与该题类似的一道题：<br>给你一个数组，找出K-1个数，使得删去这K-1个数之后得到的K个子数组和相等。（前缀和数组）</p><p>微软</p><p><a href="https://mp.weixin.qq.com/s/yewlHvHSilMsrUMFIO8WAA">https://mp.weixin.qq.com/s/yewlHvHSilMsrUMFIO8WAA</a></p>]]></content>
       
       
       
