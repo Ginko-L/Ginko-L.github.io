@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-05-18T02:13:22.563Z</updated>
+  <updated>2022-06-04T23:59:33.953Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MIT Missing semester in your CS education 2020</title>
+    <link href="https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/"/>
+    <id>https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/</id>
+    <published>2022-06-01T04:00:00.000Z</published>
+    <updated>2022-06-04T23:59:33.953Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;lec-1-exercise&quot;&gt;&lt;a href=&quot;#lec-1-exercise&quot; class=&quot;headerlink&quot; title=&quot;lec 1 exercise&quot;&gt;&lt;/a&gt;lec 1 exercise&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;echo</summary>
+        
+      
+    
+    
+    
+    <category term="公开课, tools" scheme="https://ginko-l.github.io/categories/%E5%85%AC%E5%BC%80%E8%AF%BE-tools/"/>
+    
+    
+    <category term="自学，公开课" scheme="https://ginko-l.github.io/tags/%E8%87%AA%E5%AD%A6%EF%BC%8C%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -485,19 +511,6 @@
     
     
     <category term="操作系统" scheme="https://ginko-l.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>article title</title>
-    <link href="https://ginko-l.github.io/2022/02/25/article-title-1/"/>
-    <id>https://ginko-l.github.io/2022/02/25/article-title-1/</id>
-    <published>2022-02-25T23:15:32.000Z</published>
-    <updated>2022-02-25T23:15:32.436Z</updated>
-    
-    
-    
-    
     
   </entry>
   

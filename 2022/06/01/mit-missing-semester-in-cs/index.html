@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MIT Missing semester in your CS education 2020 | Ginko</title><meta name="keywords" content="公开课，tools"><meta name="author" content="Ginko"><meta name="copyright" content="Ginko"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="lec 1 exercise echo $SHELL  mkdir .&#x2F;tmp&#x2F;missing 或 mkdir tmp&#x2F;missing  man touch  touch .&#x2F;missing&#x2F;semester 或 touch missing&#x2F;semester  略  nl@DESKTOP-D8JUGS5:~&#x2F;MITMissing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT Missing semester in your CS education 2020">
+<meta property="og:url" content="https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/index.html">
+<meta property="og:site_name" content="Ginko">
+<meta property="og:description" content="lec 1 exercise echo $SHELL  mkdir .&#x2F;tmp&#x2F;missing 或 mkdir tmp&#x2F;missing  man touch  touch .&#x2F;missing&#x2F;semester 或 touch missing&#x2F;semester  略  nl@DESKTOP-D8JUGS5:~&#x2F;MITMissing">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg">
+<meta property="article:published_time" content="2022-06-01T04:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-04T23:59:33.953Z">
+<meta property="article:author" content="Ginko">
+<meta property="article:tag" content="自学，公开课">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MIT Missing semester in your CS education 2020',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-04 19:59:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Ginko" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ginko</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MIT Missing semester in your CS education 2020</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-01T04:00:00.000Z" title="发表于 2022-06-01 00:00:00">2022-06-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-04T23:59:33.953Z" title="更新于 2022-06-04 19:59:33">2022-06-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%85%AC%E5%BC%80%E8%AF%BE-tools/">公开课, tools</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MIT Missing semester in your CS education 2020"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="lec-1-exercise"><a href="#lec-1-exercise" class="headerlink" title="lec 1 exercise"></a>lec 1 exercise</h2><ol>
+<li><p>echo $SHELL</p>
+</li>
+<li><p>mkdir .&#x2F;tmp&#x2F;missing 或 mkdir tmp&#x2F;missing</p>
+</li>
+<li><p>man touch</p>
+</li>
+<li><p>touch .&#x2F;missing&#x2F;semester 或 touch missing&#x2F;semester</p>
+</li>
+<li><p>略</p>
+</li>
+<li><p>nl@DESKTOP-D8JUGS5:~&#x2F;MITMissingSem&#x2F;tmp&#x2F;missing$ .&#x2F;semester<br>bash: .&#x2F;semester: Permission denied</p>
+</li>
+</ol>
+<p>nl@DESKTOP-D8JUGS5:~&#x2F;MITMissingSem&#x2F;tmp&#x2F;missing$ ls -lah<br>total 12K<br>drwxr-xr-x 2 nl nl 4.0K Jun  3 11:45 .<br>drwxr-xr-x 3 nl nl 4.0K Jun  3 09:40 ..<br>-rw-r–r– 1 nl nl   60 Jun  3 11:46 semester</p>
+<p>发现没有对semester的执行权限</p>
+<ol start="7">
+<li><p>因为我们对semester有读权限，对sh有执行权限，所以用sh semester时，sh读进 semester再执行，是可以成功的。</p>
+</li>
+<li><p>man chmod</p>
+</li>
+<li><p>chmod +x semester</p>
+</li>
+</ol>
+<p>因为#!&#x2F;bin&#x2F;sh 指明了interpreter。</p>
+<ol start="10">
+<li><p>.&#x2F;semester | grep modified &gt; last-modified.txt</p>
+</li>
+<li><p>略</p>
+</li>
+</ol>
+<h2 id="lec-2-exercise"><a href="#lec-2-exercise" class="headerlink" title="lec 2 exercise"></a>lec 2 exercise</h2><ol>
+<li><p>ls -laht –color</p>
+</li>
+<li><p>marco.sh如下：<br>#!bin&#x2F;bash</p>
+</li>
+</ol>
+<p>marco(){<br>    # current_path&#x3D;$pwd  注意：这样写是错的。这样的话相当于pwd是个变量，而且这个变量没有被赋值。也不能写 #current_path&#x3D;pwd，因为这样的话pwd会被当作字符串，current_path的值就是pwd.<br>    # saved_dir&#x3D;$current_path<br>    # echo “pwd: $current_path saved”<br>    saved_dir&#x3D;”$(pwd)”<br>    echo “pwd: $(pwd) saved”<br>}</p>
+<p>polo(){<br>    cd “$saved_dir”<br>    echo “change dir to $saved_dir”<br>}</p>
+<p>执行 souce path&#x2F;to&#x2F;marco.sh</p>
+<p>然后随便执行什么命令或者不执行任何命令</p>
+<p>执行marco，记录当前路径</p>
+<p>然后随便执行什么命令或者不执行任何命令</p>
+<p>执行polo， 切换到记录的路径</p>
+<ol start="3">
+<li><p>参考<a target="_blank" rel="noopener" href="https://hackmd.io/@apad0JTaSjqEjZE4TuX2vQ/r1AhU6bJO#Lecture-2-Shell-Tools">https://hackmd.io/@apad0JTaSjqEjZE4TuX2vQ/r1AhU6bJO#Lecture-2-Shell-Tools</a><br><a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/missing-notes-and-solutions//2020/solutions/shell-tools-solution/">https://missing-semester-cn.github.io/missing-notes-and-solutions//2020/solutions/shell-tools-solution/</a><br>好像都不太对。暂时还没解决。</p>
+</li>
+<li><p>find . -name ‘*.html’ | xargs -d ‘\n’ tar -czf .&#x2F;target.tar.gz</p>
+</li>
+</ol>
+<p>find . -type f -name “*.html” | xargs -d ‘\n’  tar -cvzf html.zip</p>
+<p>5.<br>find . -type f -printf ‘%T@ %p\n’ | sort -n | cut -f2 -d” “<br>来源：<a target="_blank" rel="noopener" href="https://hackmd.io/@apad0JTaSjqEjZE4TuX2vQ/r1AhU6bJO#Lecture-2-Shell-Tools">https://hackmd.io/@apad0JTaSjqEjZE4TuX2vQ/r1AhU6bJO#Lecture-2-Shell-Tools</a><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4561895/how-to-recursively-find-the-latest-modified-file-in-a-directory">https://stackoverflow.com/questions/4561895/how-to-recursively-find-the-latest-modified-file-in-a-directory</a></p>
+<p>find . -type f -print0 | xargs -0 ls -lt | head -1<br><a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/missing-notes-and-solutions//2020/solutions/shell-tools-solution/">https://missing-semester-cn.github.io/missing-notes-and-solutions//2020/solutions/shell-tools-solution/</a></p>
+<h2 id="lec-4-exercise"><a href="#lec-4-exercise" class="headerlink" title="lec 4 exercise"></a>lec 4 exercise</h2><ol start="2">
+<li>grep ^.*a.<em>a.<em>a.</em>[^(&#39;s)]$ &#x2F;usr&#x2F;share&#x2F;dict&#x2F;words |tr [:upper:] [:lower:] | sed -E ‘s&#x2F;^.</em>([a-z]{2})&#x2F;\1&#x2F;‘ | sort | uniq -c | wc -l<br>输出结果：<br>76</li>
+</ol>
+<h2 id="lec-5-exercise"><a href="#lec-5-exercise" class="headerlink" title="lec 5 exercise"></a>lec 5 exercise</h2><p>Job control</p>
+<ol>
+<li><p>sleep 1000<br> Ctrl+z 退出当前程序<br> bg 当前程序background运行<br> pgrep sleep 可以得到 sleep 1000 的pid<br> pkill sleep 可以terminate sleep 1000</p>
+<p> 关于pgrep 或pkill -a或-f,参阅man pgrep.</p>
+</li>
+<li><p>Ctrl+b “ : 上下分割窗口（pane)<br>Ctrl+b % : 左右分割窗口<br>Ctrl+b 上下左右 : 去到不同窗口<br>exit &#x2F; Ctrl+d: 关闭窗口</p>
+</li>
+</ol>
+<p>Ctrl+b c:create new window(就是创建一个新的类似tab一样的东西)<br>Ctrl+b p: go to previous window<br>Ctrl+b n: go to next window<br>Ctrl+b <number>: go to 标号为number的window<br>Ctrl+b d: To detach your current session<br>Ctrl+b D: to have tmux give you a choice which of your sessions you want to detach.</p>
+<p>These two will detach your session but will leave you’re doing in that session running in the background.</p>
+<p>Ctrl+b z: 窗口（pane)全屏， 再一次Ctrl+b z会使窗口变为原来的大小。<br>Ctrl+b：当前窗口重命名</p>
+<p>tmux ls: list all running sessions</p>
+<p>To connect to that session you start tmux again but this time tell it which session to attach to:<br>tmux attach -t 0<br>Note that the -t 0 is the parameter that tells tmux which session to attach to. “0” is the first part of your tmux ls output.</p>
+<p>tmux new -s session_name: create a new session with session_name</p>
+<p>tmux rename-session -t 0 session_name: rename session “0” with session_name</p>
+<p>tmux attach -t session_name</p>
+<p>参考文献：<br><a target="_blank" rel="noopener" href="https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/">https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/</a><br><a target="_blank" rel="noopener" href="https://missing.csail.mit.edu/2020/command-line/">https://missing.csail.mit.edu/2020/command-line/</a></p>
+<h2 id="Lec-6-exercise"><a href="#Lec-6-exercise" class="headerlink" title="Lec 6 exercise"></a>Lec 6 exercise</h2><ol start="2">
+<li><p>git clone <a target="_blank" rel="noopener" href="https://github.com/missing-semester/missing-semester.git">https://github.com/missing-semester/missing-semester.git</a><br> git log –all –graph –decorate<br> git log -p <file_path></p>
+</li>
+<li><p>git blame _config.yml<br>然后可以看到collections对应的哈希值是a88b4eac</p>
+<p>然后git show a88b4eac，可以查看这次commit的详细信息。</p>
+</li>
+<li><p>已做，答案略</p>
+</li>
+<li><p>在.git&#x2F;config里加上：<br>[alias]<br> graph &#x3D; log –all –graph –decorate –oneline</p>
+</li>
+<li><p>在~&#x2F;下创建gitignore_global文件，在文件中添加<br>.DS_Store<br>.vscode<br>等需要忽略的文件<br>然后执行 git config –global core.excludesfile ~&#x2F;.gitignore_global<br>上述是global的例子，也可改为只作用于当先repo.</p>
+</li>
+<li><p>略</p>
+</li>
+</ol>
+<h2 id="Lec-7-Exercise"><a href="#Lec-7-Exercise" class="headerlink" title="Lec 7 Exercise"></a>Lec 7 Exercise</h2><p>Debugging</p>
+<ol>
+<li>journalctl我执行有问题，待解决。</li>
+</ol>
+<p>其他的题目没做，我暂时不需要这些，IDE基本都有这些功能。</p>
+<p>Profiling<br>5. kernprof -l -v sorts.py (注意：要在要measure的函数的上一行添加@profile)<br>python3 -m cProfile -s tottime sorts.py | grep insertionsort<br>python3 -m cProfile -s tottime sorts.py | grep quicksort</p>
+<p>bottleneck: 看kernprof -l -v sorts.py 的结果的表格里的%time。</p>
+<p>python3 -m memory_profiler sorts.py</p>
+<ol start="6">
+<li><p>pycallgraph graphviz – .&#x2F;fib.py<br>fib0 is called 21 times. Yes. One time.</p>
+</li>
+<li><p>略</p>
+</li>
+<li><p>当执行stress -c 3时，htop显示有三个cpu被全部占用。<br>当执行taskset –cpu-list 0,2 stress -c 3时，htop显示1号和3号cpu被全部占用。这是由于taskset –cpu-list 0,2将stress这个任务安排在0和2号cpu上。htop里cpu编号是从1开始的，所以显示1，3号cpu被全部占用。</p>
+</li>
+<li><p>略</p>
+</li>
+</ol>
+<h2 id="Lec-8-Exercise"><a href="#Lec-8-Exercise" class="headerlink" title="Lec 8 Exercise"></a>Lec 8 Exercise</h2><p>1.<br>makefile 如下：<br>‘’’<br>paper.pdf: paper.tex plot-data.png<br>    pdflatex paper.tex</p>
+<p>plot-%.png: %.dat plot.py<br>    .&#x2F;plot.py -i $*.dat -o $@</p>
+<p>.PHONY: clean<br>clean:<br>    rm plot*.png paper.pdf</p>
+<p>‘’’</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>也可参考 <a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/missing-notes-and-solutions//2020/solutions/metaprogramming-solution/">https://missing-semester-cn.github.io/missing-notes-and-solutions//2020/solutions/metaprogramming-solution/</a></p>
+<ol start="2">
+<li><p>略</p>
+</li>
+<li></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Ginko</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/">https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ginko-l.github.io" target="_blank">Ginko</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%87%AA%E5%AD%A6%EF%BC%8C%E5%85%AC%E5%BC%80%E8%AF%BE/">自学，公开课</a></div><div class="post_share"><div class="social-share" data-image="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/17/dimensionality-reduction-fang-fa/"><img class="next-cover" src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ginko</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lec-1-exercise"><span class="toc-text">lec 1 exercise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lec-2-exercise"><span class="toc-text">lec 2 exercise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lec-4-exercise"><span class="toc-text">lec 4 exercise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lec-5-exercise"><span class="toc-text">lec 5 exercise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-6-exercise"><span class="toc-text">Lec 6 exercise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-7-Exercise"><span class="toc-text">Lec 7 Exercise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-8-Exercise"><span class="toc-text">Lec 8 Exercise</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/06/01/mit-missing-semester-in-cs/" title="MIT Missing semester in your CS education 2020"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MIT Missing semester in your CS education 2020"/></a><div class="content"><a class="title" href="/2022/06/01/mit-missing-semester-in-cs/" title="MIT Missing semester in your CS education 2020">MIT Missing semester in your CS education 2020</a><time datetime="2022-06-01T04:00:00.000Z" title="发表于 2022-06-01 00:00:00">2022-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/dimensionality-reduction-fang-fa/" title="无题"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/dimensionality-reduction-fang-fa/" title="无题">无题</a><time datetime="2022-05-18T02:13:22.539Z" title="发表于 2022-05-17 22:13:22">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/" title="一些总是记不住的python语法"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些总是记不住的python语法"/></a><div class="content"><a class="title" href="/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/" title="一些总是记不住的python语法">一些总是记不住的python语法</a><time datetime="2022-05-15T04:00:00.000Z" title="发表于 2022-05-15 00:00:00">2022-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/" title="无题"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/" title="无题">无题</a><time datetime="2022-05-11T19:25:57.805Z" title="发表于 2022-05-11 15:25:57">2022-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/" title="无题"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/" title="无题">无题</a><time datetime="2022-05-11T19:18:39.254Z" title="发表于 2022-05-11 15:18:39">2022-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Ginko</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
