@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-06-05T00:11:16.577Z</updated>
+  <updated>2022-09-18T09:32:05.897Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -17,11 +17,99 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>QuickSelect 算法时间复杂度</title>
+    <link href="https://ginko-l.github.io/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/"/>
+    <id>https://ginko-l.github.io/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/</id>
+    <published>2022-09-17T16:00:00.000Z</published>
+    <updated>2022-09-18T09:32:05.897Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构与算法" scheme="https://ginko-l.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法，时间复杂度" scheme="https://ginko-l.github.io/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>进程，线程，协程</title>
+    <link href="https://ginko-l.github.io/2022/09/18/jin-cheng-xian-cheng-xie-cheng/"/>
+    <id>https://ginko-l.github.io/2022/09/18/jin-cheng-xian-cheng-xie-cheng/</id>
+    <published>2022-09-17T16:00:00.000Z</published>
+    <updated>2022-09-18T05:25:08.799Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://ginko-l.github.io/2022/06/15/mit-6.824-distributed-system/"/>
+    <id>https://ginko-l.github.io/2022/06/15/mit-6.824-distributed-system/</id>
+    <published>2022-06-14T21:32:48.783Z</published>
+    <updated>2022-06-14T21:32:48.819Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;MIT-6-824&quot;&gt;&lt;a href=&quot;#MIT-6-824&quot; class=&quot;headerlink&quot; title=&quot;MIT 6.824&quot;&gt;&lt;/a&gt;MIT 6.824&lt;/h2&gt;&lt;p&gt;Lab 1&lt;br&gt;主要参考：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://ginko-l.github.io/2022/06/10/go-yu-yan-slice-yu-capacity/"/>
+    <id>https://ginko-l.github.io/2022/06/10/go-yu-yan-slice-yu-capacity/</id>
+    <published>2022-06-10T02:29:55.519Z</published>
+    <updated>2022-06-29T13:50:24.248Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Go-语言&quot;&gt;&lt;a href=&quot;#Go-语言&quot; class=&quot;headerlink&quot; title=&quot;Go 语言&quot;&gt;&lt;/a&gt;Go 语言&lt;/h1&gt;&lt;h2 id=&quot;slice-与-capacity&quot;&gt;&lt;a href=&quot;#slice-与-capacity&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>MIT Missing semester in your CS education 2020</title>
     <link href="https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/"/>
     <id>https://ginko-l.github.io/2022/06/01/mit-missing-semester-in-cs/</id>
-    <published>2022-06-01T04:00:00.000Z</published>
-    <updated>2022-06-05T00:11:16.577Z</updated>
+    <published>2022-05-31T16:00:00.000Z</published>
+    <updated>2022-06-06T00:41:02.518Z</updated>
     
     
       
@@ -44,8 +132,8 @@
   
   <entry>
     <title></title>
-    <link href="https://ginko-l.github.io/2022/05/17/dimensionality-reduction-fang-fa/"/>
-    <id>https://ginko-l.github.io/2022/05/17/dimensionality-reduction-fang-fa/</id>
+    <link href="https://ginko-l.github.io/2022/05/18/dimensionality-reduction-fang-fa/"/>
+    <id>https://ginko-l.github.io/2022/05/18/dimensionality-reduction-fang-fa/</id>
     <published>2022-05-18T02:13:22.539Z</published>
     <updated>2022-05-18T02:13:22.563Z</updated>
     
@@ -92,8 +180,8 @@
   
   <entry>
     <title></title>
-    <link href="https://ginko-l.github.io/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/"/>
-    <id>https://ginko-l.github.io/2022/05/11/mian-shi-zhong-yu-dao-de-suan-fa-ti/</id>
+    <link href="https://ginko-l.github.io/2022/05/12/mian-shi-zhong-yu-dao-de-suan-fa-ti/"/>
+    <id>https://ginko-l.github.io/2022/05/12/mian-shi-zhong-yu-dao-de-suan-fa-ti/</id>
     <published>2022-05-11T19:25:57.805Z</published>
     <updated>2022-05-11T19:25:57.834Z</updated>
     
@@ -113,8 +201,8 @@
   
   <entry>
     <title></title>
-    <link href="https://ginko-l.github.io/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/"/>
-    <id>https://ginko-l.github.io/2022/05/11/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/</id>
+    <link href="https://ginko-l.github.io/2022/05/12/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/"/>
+    <id>https://ginko-l.github.io/2022/05/12/kan-bie-ren-mian-jing-tie-li-de-suan-fa-ti/</id>
     <published>2022-05-11T19:18:39.254Z</published>
     <updated>2022-05-19T22:39:28.782Z</updated>
     
@@ -369,8 +457,8 @@
   
   <entry>
     <title></title>
-    <link href="https://ginko-l.github.io/2022/03/07/jiao-cha-shang/"/>
-    <id>https://ginko-l.github.io/2022/03/07/jiao-cha-shang/</id>
+    <link href="https://ginko-l.github.io/2022/03/08/jiao-cha-shang/"/>
+    <id>https://ginko-l.github.io/2022/03/08/jiao-cha-shang/</id>
     <published>2022-03-07T16:17:09.252Z</published>
     <updated>2022-03-07T16:17:09.294Z</updated>
     
@@ -409,108 +497,6 @@
     
     
     <category term="面经" scheme="https://ginko-l.github.io/tags/%E9%9D%A2%E7%BB%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法岗 还是 开发岗？</title>
-    <link href="https://ginko-l.github.io/2022/03/03/zhi-ye-xuan-ze-yu-fa-zhan/"/>
-    <id>https://ginko-l.github.io/2022/03/03/zhi-ye-xuan-ze-yu-fa-zhan/</id>
-    <published>2022-03-03T05:00:00.000Z</published>
-    <updated>2022-03-04T01:20:53.004Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;职业选择与发展&lt;/p&gt;
-&lt;p&gt;首先，请一定要重视方向的选择。方向即为赛道，选择一个合适自己的赛道非常重要。大家在转码的时候其实是要做两个选择:第一就是转码本身。这是大方向、领域行业和职业的选择。再做了这个决定之后，就要到了选择小方向的时候。这就像你选择了田径短跑作为你的职业</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="https://ginko-l.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="职业规划与发展" scheme="https://ginko-l.github.io/tags/%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92%E4%B8%8E%E5%8F%91%E5%B1%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux pipe() 详解</title>
-    <link href="https://ginko-l.github.io/2022/02/26/linux-pipe-xiang-jie/"/>
-    <id>https://ginko-l.github.io/2022/02/26/linux-pipe-xiang-jie/</id>
-    <published>2022-02-26T05:00:00.000Z</published>
-    <updated>2022-02-26T21:04:49.902Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;自学 MIT 6.S081 操作系统，pipe()讲的不是很明白。参考:&lt;br&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="https://ginko-l.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="操作系统" scheme="https://ginko-l.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>printf vs fprintf vs sprintf</title>
-    <link href="https://ginko-l.github.io/2022/02/26/printf-vs-fprintf-vs-sprintf/"/>
-    <id>https://ginko-l.github.io/2022/02/26/printf-vs-fprintf-vs-sprintf/</id>
-    <published>2022-02-26T05:00:00.000Z</published>
-    <updated>2022-02-26T14:36:34.620Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="https://ginko-l.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="操作系统" scheme="https://ginko-l.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux pipe() 详解</title>
-    <link href="https://ginko-l.github.io/2022/02/26/mit-6.s081-lab1-xargs/"/>
-    <id>https://ginko-l.github.io/2022/02/26/mit-6.s081-lab1-xargs/</id>
-    <published>2022-02-26T05:00:00.000Z</published>
-    <updated>2022-02-27T13:36:38.356Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;C语言中，0是字符串输入的结束标志。&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="https://ginko-l.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="操作系统" scheme="https://ginko-l.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
