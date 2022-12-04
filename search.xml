@@ -4,11 +4,86 @@
   
     
     <entry>
+      <title>优质CS公开课</title>
+      <link href="/2022/11/25/you-zhi-cs-gong-kai-ke/"/>
+      <url>/2022/11/25/you-zhi-cs-gong-kai-ke/</url>
+      
+        <content type="html"><![CDATA[<p>优质CS公开课</p><p><a href="https://csdiy.wiki/">https://csdiy.wiki/</a></p><p><a href="https://conanhujinming.github.io/comments-for-awesome-courses/index.html">https://conanhujinming.github.io/comments-for-awesome-courses/index.html</a></p><p><a href="https://conanhujinming.github.io/post/how_to_learn_cs/">https://conanhujinming.github.io/post/how_to_learn_cs/</a></p><p><a href="https://github.com/spring2go/cs_study_plan">https://github.com/spring2go/cs_study_plan</a></p><p><a href="https://cha.fan/questions/6Yab9UujPZE7xkexE8Jc">https://cha.fan/questions/6Yab9UujPZE7xkexE8Jc</a></p><p><a href="http://yc.eethu.cn/?/article/12">http://yc.eethu.cn/?/article/12</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 公开课 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CS, 公开课 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MIT 6.824 Distributed System Labs 总结/踩坑</title>
+      <link href="/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/"/>
+      <url>/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/</url>
+      
+        <content type="html"><![CDATA[<p>Lecture看的Spring 2020的，Morris老师讲的，slides, notes，labs用的是最新的Spring 2022的.<br>由于整个战线拉的很长，且最后才写总结，前面的lab不太记得了，很多细节也记不清了，所以简单写一下所有lab的总结。</p><h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><p>略</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/PKUFlyingPig/MIT6.824/tree/master/src/mr">https://github.com/PKUFlyingPig/MIT6.824/tree/master/src/mr</a></p><h1 id="Lab-2-Raft"><a href="#Lab-2-Raft" class="headerlink" title="Lab 2 Raft"></a>Lab 2 Raft</h1><p>lab2 主要是按照raft论文中的图2来实现，有些细节感觉图上也没有cover,我有些是根据自己的理解实现的。lab2 webpage里的下列几个guide链接比较有用：<br><a href="https://thesquareplanet.com/blog/students-guide-to-raft/">https://thesquareplanet.com/blog/students-guide-to-raft/</a><br><a href="https://pdos.csail.mit.edu/6.824/labs/raft-locking.txt">https://pdos.csail.mit.edu/6.824/labs/raft-locking.txt</a><br><a href="https://pdos.csail.mit.edu/6.824/labs/raft-structure.txt">https://pdos.csail.mit.edu/6.824/labs/raft-structure.txt</a></p><p>lab2整体的逻辑和架构并不太复杂，就是corner case很多，要费很多精力debug.</p><p>关于sendHeartBeat(),我一开始的实现只是周期性的sendHeartBeat（按照lab要求每100ms一次）,但是测试时发现这样有点慢，无法满足lab中总的时间要求。我参阅别人的实现，将sendHeartBeat()的触发条件进行了修改。<br>触发条件1：每100ms sendHeartBeat(即原始的要求)<br>触发条件2：当Start()函数被调用并添加了新的logEntry时</p><p>详情参阅我code中的BroadcastHeartBeat().</p><p>关于我的LeaderCommiter(), 我先让LeaderCommiter() sleep 一小段时间, 因为我在sendHeartBeat()之后用goroutine执行LeaderCommiter, 我希望sendHeartBeat能先拿到锁更新rf.matchedIdx,然后再让LeaderCommiter()拿到锁，这样可以加快程序运行。<br>否则的话，LeaderCommiter()要多几次无效执行。不知道还有没有更elegent的方式。</p><h2 id="Lab-2A"><a href="#Lab-2A" class="headerlink" title="Lab 2A"></a>Lab 2A</h2><h2 id="Lab-2B"><a href="#Lab-2B" class="headerlink" title="Lab 2B"></a>Lab 2B</h2><h2 id="Lab-2C"><a href="#Lab-2C" class="headerlink" title="Lab 2C"></a>Lab 2C</h2><h2 id="Lab-2D"><a href="#Lab-2D" class="headerlink" title="Lab 2D"></a>Lab 2D</h2><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>leader给followers传送log时一定要copy自己的log到args,不能直接用slice,否则接收的server和原始的server引用的是同一个log.</p><p>ApplyLog()中，不要每次给log加锁构造applyMsg并穿递给server层，这样每次要很久才能释放锁，容易造成阻塞。较好的做法是加锁，将要apply的那部分log copy到一个applyQueue里，然后解锁。根据applyQueue里的log构造applyMsg并向server层传递。raft向server层穿递applyMsg时也不要加锁。</p><p>根据Lab instruction（还是论文？记不清了）第一个command是第1个logEntry,不是第0个logEntry.以后回收log的时候，我会将snapshot包含的最后一个logEntry保留一份放在新log 最开头的位置，这样做会比较方便，而且与“第一个command是第1个logEntry”这一要求保持一致。</p><h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><h1 id="Lab-3-kvraft"><a href="#Lab-3-kvraft" class="headerlink" title="Lab 3 kvraft"></a>Lab 3 kvraft</h1><p>Lab3 在lab2的基础上加上了Key Value Server(KVServer)和client。Lab 4与lab3类似，但比lab3更难，由于lab4会有较详细的记录，所以lab3不详述。</p><h2 id="参考-2"><a href="#参考-2" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/Ginko-L/6.824-lab/tree/master/src/kvraft">https://github.com/Ginko-L/6.824-lab/tree/master/src/kvraft</a><br><a href="https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab3.md">https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab3.md</a></p><h1 id="Lab-4-Shardkv"><a href="#Lab-4-Shardkv" class="headerlink" title="Lab 4 Shardkv"></a>Lab 4 Shardkv</h1><p>Lab4 要求实现一个sharded KV service. 有多个replica Group（简称group）, 每个group有多个server。将data分为多个shard, 每个shard包含一个或多个key. 每个shard被assign给一个group。Lab 4 大体上与Lab 3 类似, lab3是一个group, lab4扩展到了多个group。我也实现了全部challenge。</p><h2 id="Lab-4A"><a href="#Lab-4A" class="headerlink" title="Lab 4A"></a>Lab 4A</h2><h3 id="要实现的功能："><a href="#要实现的功能：" class="headerlink" title="要实现的功能：###"></a>要实现的功能：###</h3><p>shard controler(shardctrl) 负责控制shard和group的移动。shardctrl要实现四中控制功能，<br>Join(servers): 新加入一组server<br>Leave(gid): group离开(gid is group id)<br>Move(shardId, gid): 将一个shard移动到指定的group.<br>Query(cfgNum):  return the configuration that has that config number.</p><p>要求每个group的负载尽可能均衡，并且shard的移动尽可能少。</p><p>shardctrl 包含server和client，client发出RPC请求，由server负责实现。</p><h3 id="架构："><a href="#架构：" class="headerlink" title="架构：###"></a>架构：###</h3><p>client: 主要实现向server发送Join, Leave, Move, Query RPC请求。</p><p>server：<br>实现Join, Leave, Move, Query四个RPC handler。<br>每个RPC handler负责接收client传来的请求<br>RPC handler将对应的操作传递给raft层进行同步。<br>process()函数执行raft层同步后的操作，然后将操作结果传给对应的RPC handler。<br>RPC handler接收来自process()的操作结果，并将结果返回给client。</p><h3 id="实现"><a href="#实现" class="headerlink" title="实现:"></a>实现:</h3><p>我们需要</p><ol><li>实现Join, Leave, Move, Query四个RPC handler。</li><li>实现process()函数。</li></ol><p>Move, Query比较简单，不赘述。<br>Join, Leave需要求每个group的负载尽可能均衡，并且shard的移动尽可能少。</p><p>大致思路就是<br>算出每个group需要负载的shard数目的平均值，注意平均值可能有两个：<br>    max_shards :&#x3D; int(math.Ceil(float64(NShards) &#x2F; float64(len(Cfg.Groups))))<br>    min_shards :&#x3D; int(math.Floor(float64(NShards) &#x2F; float64(len(Cfg.Groups))))<br>算出有几个group需要负载max_shards个shard：<br>    num_max :&#x3D; NShards % len(Cfg.Groups)</p><h3 id="tips："><a href="#tips：" class="headerlink" title="tips：###"></a>tips：###</h3><p>注意：Go中map iteration的顺序是不定的！</p><p><a href="https://stackoverflow.com/questions/32751537/why-do-i-get-a-cannot-assign-error-when-setting-value-to-a-struct-as-a-value-i">https://stackoverflow.com/questions/32751537/why-do-i-get-a-cannot-assign-error-when-setting-value-to-a-struct-as-a-value-i</a></p><p><a href="https://blog.csdn.net/makenothing/article/details/105037977">https://blog.csdn.net/makenothing/article/details/105037977</a></p><h2 id="Lab-4B"><a href="#Lab-4B" class="headerlink" title="Lab 4B"></a>Lab 4B</h2><h3 id="功能-amp-架构"><a href="#功能-amp-架构" class="headerlink" title="功能 &amp; 架构"></a>功能 &amp; 架构</h3><p>lab4B 就是要实现shardKV server和client。大体的架构与lab4A 和lab3类似。</p><p>server 与 client之间：<br>server需要实现Get(key), Put(key, value), Append(key, value)，并将结果返回给client.</p><p>server与controll之间：<br>server需要周期性的fetch config, 根据config来移动shard。<br>参阅我code中的FetchConfig()。</p><p>server与server之间：<br>server s 需要向server t request shard sd, server t将shard sh传输给server s。server s成功将shard sd存储之后要向server t发送RemoveShard RPC, server t 收到之后需要将自己存储的shard sd置为invalid（或删除）。<br>参阅我code中的SendRequestShards(), RequestShards(), SendRemoveShards(), RemoveShards()</p><p>server与自己的raft层：<br>server需要将Get, Put, Append, 移入shards(即UpdateShards), 移除shards(即RemoveShards), 更新config操作传递给raft层（raft打日志）以实现整个group server的同步。server 需要读取raft层传递来的applyMsg来执行相应操作。<br>参阅我code中的process().</p><h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><p>Get(), PutAppend()与lab 3类似，server需要根据client的args构造相应的operation, 将oper传到raft层，然后等待operation的执行结果，并将结果传给client。</p><p>与lab3不同的是，lab4中，group leader需要周期性从controller那里fetch config(通过FetchConfig实现). group leader 需要周期性的检查自己负责的shard是否齐全（通过ShardCheck()实现），不齐全了要向前一个负责该shard的server索要该shard（通过sendRequestShard()实现）。当收到别的server发来的shard时，group leader向raft层传递UpdateShards operation, 从而将该shard同步给group里的所有server。当group leader的process()函数执行完了UpdateShards operation后，group leader 向相应的server 发送RemoveShardsArgs （通过sendRemoveShards()实现）.</p><p>group leader还要处理别的server发来的RequestShardArgs(通过RequestShard() RPC handler实现，将对方server请求的shard发给它)。</p><p>group leader还要处理别的server发来的RemoveShardArgs(通过RemoveShard() RPC handler实现). 当收到别的server发来的RemoveShardArgs，说明对方server已经成功将该shard存储，RemoveShard() RPC handler就会向raft层传递RemoveShards operation,从而该group的所有server都会将该shard置为invalid并删除。</p><p>每个shard(在我的code里是ShardKey struct{})要包含一个status field,表示该shard的状态。<br>0：invalid,表示此server中该shard无效<br>1: valid, 表示此server中该shard有效<br>2: requiring,表示server正在向别的server请求该shard<br>3: moving，表示在此server中，该shard即将被移动到别的shard<br>详情见我的code里是ShardKey struct{}</p><h3 id="tips-1"><a href="#tips-1" class="headerlink" title="tips"></a>tips</h3><ol start="0"><li><p>checkDuplicate()需要记录clientID, client last sequence number, 以及client last operation results. 原来的labclientID, client last sequence number, 以及client last operation results都是记录在server中（是server这个struct的一个field）,这在之前的lab是可行的，但在lab 4B不行。因为如果保存在server中，shard迁移到另一个group的时候，这些信息没有迁移到新的group中，会造成某些操作的重复执行，使得结果错误。所以要将这些信息作为一个shard的field.</p></li><li><p>一定要等到server s成功存储了请求的shard sd之后（即server s 的process()执行了UpdateShards的operation之后），server t才能向raft层传递RemoveShards operation。不能server t 将shard sd发动出去之后就删除shard sd,这样的话如果server s 没能成功接收shard sd或者因为什么别的原因没能将shard sd 传递到raft层时，会造成shard sd的丢失。</p></li><li><p>process() 中 Put, Append 成功时不要将op.Value返回给client,题目中没要求返回value给client，是我自己这样做的，这样不对，因为要保存每个client最后一个操作的结果，这样会多占用存储空间，导致lab4B Challenge 1 garbage collection无法通过！</p></li><li><p>SendRequestShards(), SendRemoveShards(), client的函数中对于收到回应的不同情况(e.g. wrong leader, wrong group…)的处理比较tricky, 比较保险的做法是一个group里的所有server都要发一遍RPC。</p></li><li><p>在和raft层交互时（e.g. kv.rf.Start(), kv.rf.GetState(), kv.rf.Snapshot()…）不要加锁,否则容易死锁。</p></li><li><p>InstallSnapshot之后，由于raft层的applyQueue中尚有待apply的log,会造成server接收到的新的applyMsg的commandIndex &lt;&#x3D; 已经执行过的applyMsg的commandIndex(或者 &lt;&#x3D; InstallSnapshot的Index),即command的回滚。因此，server要记录已经执行的command（即applyMsg）的commandIndex, 如果后来的commandIndex &lt;&#x3D; 已经执行过的commandIndex，不要执行该command,继续下一条command. </p></li><li><p>lab 4B非常吃CPU，注意程序不要产生过多的Goroutine，注意尽量少产生RPC.不要有一直不停运行的for loop。当server被kill之后，相应的goroutine要停止。for loop中sleep的时间要设置的比较合适。尽量只让group leader之间进行通信，以减少RPC。</p></li><li><p>记得好像select也会增加很多goroutine（还是很吃CPU？记不太清了，总之当时debug的时候根据go profiling tools改进了client的switch）。</p></li></ol><h2 id="参考-3"><a href="#参考-3" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/Ginko-L/6.824-lab/tree/master/src/shardctrler">https://github.com/Ginko-L/6.824-lab/tree/master/src/shardctrler</a><br><a href="https://github.com/Ginko-L/6.824-lab/tree/5695c2c22f28123a49875990d27a03c463969f71/src/shardkv">https://github.com/Ginko-L/6.824-lab/tree/5695c2c22f28123a49875990d27a03c463969f71/src/shardkv</a><br><a href="https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab4.md">https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab4.md</a></p><h2 id="Debug-技巧"><a href="#Debug-技巧" class="headerlink" title="Debug 技巧"></a>Debug 技巧</h2><h3 id="Go-profiling-tools"><a href="#Go-profiling-tools" class="headerlink" title="Go profiling tools"></a>Go profiling tools</h3><p><a href="https://go.dev/doc/diagnostics">https://go.dev/doc/diagnostics</a><br><a href="https://pkg.go.dev/runtime/pprof">https://pkg.go.dev/runtime/pprof</a><br><a href="https://dev.to/agamm/how-to-profile-go-with-pprof-in-30-seconds-592a">https://dev.to/agamm/how-to-profile-go-with-pprof-in-30-seconds-592a</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 自学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MIT 6.824，distributed system </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>YF笔试</title>
+      <link href="/2022/09/24/yf-bi-shi/"/>
+      <url>/2022/09/24/yf-bi-shi/</url>
+      
+        <content type="html"><![CDATA[<p>YF笔试</p><p>5道编程题</p><ol><li><p>找到通话时间最长的人的名字 （SQL）</p></li><li><p>一个数组，代表一个chain的结点。数组的值代表破坏这个结点的代价。求把chain变成3段所需的最小代价。</p></li><li><p>一个数组，正数代表收入，负数代表支出。为了不使buget出现负值，需要把一部分支出移到数组的末尾。求最少需要移动几次，才能使buget在任何时候都不为负。即从数组的开头开始加，和不出现负值。</p></li><li><p>树（多叉树）的每个节点标有字母a或b. 求树的最长路径，要求相邻节点的字母不能相同。给定一个字符串S和数组A。S只包含字母a和b,代表树的节点的字母。A[i]代表编号为i的节点的父节点的编号。根节点编号为0，根节点的父节点A[0]&#x3D;-1.返回上述最长路径的长度。</p></li></ol><p>注意：这个路径不一定要经过根节点。</p><ol start="5"><li>给定一个数组，数组的值代表小球上的数字。用三种颜色RGB染这些小球，使得三种颜色平衡（即三种颜色的和相等）。返回一个包含RGB的字符串，表示给小球染色的结果。</li></ol><p>与Leetcode 698相似</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法题， 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>QuickSelect 算法时间复杂度</title>
       <link href="/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/"/>
       <url>/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://stackoverflow.com/questions/56940793/quickselect-time-complexity-explained">https://stackoverflow.com/questions/56940793/quickselect-time-complexity-explained</a></p><p><a href="https://medium.com/nerd-for-tech/quick-select-algorithm-17ac146b6218">https://medium.com/nerd-for-tech/quick-select-algorithm-17ac146b6218</a></p>]]></content>
+        <content type="html"><![CDATA[<p>QuickSelect 算法<br>class Solution:<br>    def findKthLargest(self, nums: List[int], k: int) -&gt; int:<br>        #我自己写的QuickSelect算法<br>        #print(nums)<br>        pivotVal &#x3D; nums[0]<br>        left &#x3D; []<br>        right &#x3D; []<br>        for i in range(1, len(nums)):<br>            if nums[i] &lt; pivotVal:<br>                left.append(nums[i])<br>            else:<br>                right.append(nums[i])<br>        if len(right) &#x3D;&#x3D; k-1:<br>            return pivotVal<br>        elif len(right) &lt; k-1:<br>            # nums1 &#x3D; copy.deepcopy(nums)<br>            # nums1 &#x3D; nums1[:len(left)]<br>            return self.findKthLargest(left, k-len(right)-1)<br>        else:<br>            # nums1 &#x3D; copy.deepcopy(nums)<br>            # nums1 &#x3D; nums1[len(left):]<br>            return self.findKthLargest(right, k)</p><p><a href="https://stackoverflow.com/questions/56940793/quickselect-time-complexity-explained">https://stackoverflow.com/questions/56940793/quickselect-time-complexity-explained</a></p><p><a href="https://medium.com/nerd-for-tech/quick-select-algorithm-17ac146b6218">https://medium.com/nerd-for-tech/quick-select-algorithm-17ac146b6218</a></p>]]></content>
       
       
       <categories>
@@ -207,31 +282,6 @@
     
     
     <entry>
-      <title>八股文整理</title>
-      <link href="/2022/04/26/ba-gu-wen-zheng-li/"/>
-      <url>/2022/04/26/ba-gu-wen-zheng-li/</url>
-      
-        <content type="html"><![CDATA[<p>八股文整理</p><p>机器学习：</p><p>高频ML&#x2F;DL面试题<br><a href="https://blog.csdn.net/qq_35812205/article/details/117047412">https://blog.csdn.net/qq_35812205/article/details/117047412</a></p><p>Adam and SGD<br><a href="https://blog.csdn.net/jiachen0212/article/details/80086926">https://blog.csdn.net/jiachen0212/article/details/80086926</a></p><p>激活函数性质<br><a href="https://blog.csdn.net/qq_18310041/article/details/91042085">https://blog.csdn.net/qq_18310041/article/details/91042085</a></p><p>激活函数总结：<br><a href="https://www.jiqizhixin.com/articles/2021-02-24-7">https://www.jiqizhixin.com/articles/2021-02-24-7</a></p><p>sigmoid 激活函数梯度消失问题：<br><a href="https://blog.csdn.net/feizxiang3/article/details/101294382#:~:text=%E5%A6%82%E6%9E%9C%E6%98%AF%E5%8F%AA%E6%9C%89%E5%87%A0%E4%B8%AA,%E8%AE%A1%E7%AE%97%E5%88%9D%E5%A7%8B%E5%B1%82%E7%9A%84%E5%AF%BC%E6%95%B0%E3%80%82">https://blog.csdn.net/feizxiang3/article/details/101294382#:~:text=%E5%A6%82%E6%9E%9C%E6%98%AF%E5%8F%AA%E6%9C%89%E5%87%A0%E4%B8%AA,%E8%AE%A1%E7%AE%97%E5%88%9D%E5%A7%8B%E5%B1%82%E7%9A%84%E5%AF%BC%E6%95%B0%E3%80%82</a></p><p>GRU<br><a href="https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be">https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be</a></p><p>Activation function<br>Sigmoid vs softmax:<br>Sigmoid&#x2F; logistic function: two class classification<br>Softmax: multiclass classification,当two class 的时候，softmax 就是 sigmoid。 </p><p>交叉熵 cross entropy 解释<br><a href="https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82">https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82</a></p><p>Bidirectional RNN<br><a href="https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66">https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66</a></p><p>loss functon 总结:</p><p><a href="https://zhuanlan.zhihu.com/p/58883095">https://zhuanlan.zhihu.com/p/58883095</a></p><p><a href="https://demmon-tju.github.io/2020/01/28/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/">https://demmon-tju.github.io/2020/01/28/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/</a></p><p>GBDT<br><a href="https://www.cnblogs.com/pinard/p/6140514.html#!comments">https://www.cnblogs.com/pinard/p/6140514.html#!comments</a></p><p>XGBOOST<br><a href="https://zhuanlan.zhihu.com/p/142413825">https://zhuanlan.zhihu.com/p/142413825</a><br><a href="https://zhuanlan.zhihu.com/p/87885678">https://zhuanlan.zhihu.com/p/87885678</a></p><p>GBDT XGboost面试题<br><a href="https://zhuanlan.zhihu.com/p/142817461">https://zhuanlan.zhihu.com/p/142817461</a></p><p>其他：</p><p>C语言学习 作用域和生存期<br><a href="https://www.jianshu.com/p/fe2782e04401">https://www.jianshu.com/p/fe2782e04401</a></p><p>Java python 的区别<br><a href="http://bookshadow.com/weblog/2014/05/17/python-vs-java-key-differences/">http://bookshadow.com/weblog/2014/05/17/python-vs-java-key-differences/</a></p><p>Wait和sleep的区别<br><a href="https://www.jianshu.com/p/25e959037eed">https://www.jianshu.com/p/25e959037eed</a></p><p>聊聊B树和B+树 数据结构是什么  查询复杂度是多少<br><a href="https://www.cnblogs.com/nullzx/p/8729425.html#:~:text=B%E6%A0%91%E4%B9%9F%E7%A7%B0B,%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E3%80%82">https://www.cnblogs.com/nullzx/p/8729425.html#:~:text=B%E6%A0%91%E4%B9%9F%E7%A7%B0B,%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E3%80%82</a></p><p>乐观锁 悲观锁<br><a href="https://www.cnblogs.com/kismetv/p/10787228.html">https://www.cnblogs.com/kismetv/p/10787228.html</a></p><p>计算机网络：<br>Cookie, session<br><a href="https://www.zhihu.com/question/19786827">https://www.zhihu.com/question/19786827</a></p><p>客户端发送网络请求，到拿到响应的整个过程：<br><a href="https://blog.csdn.net/zjkC050818/article/details/78345819">https://blog.csdn.net/zjkC050818/article/details/78345819</a></p><p>Http和https的区别， https的原理：<br><a href="https://blog.csdn.net/xionghuixionghui/article/details/68569282#:~:text=HTTPS%E5%92%8CHTTP%E7%9A%84%E5%8C%BA%E5%88%AB,80%EF%BC%8C%E5%90%8E%E8%80%85%E6%98%AF443%E3%80%82">https://blog.csdn.net/xionghuixionghui/article/details/68569282#:~:text=HTTPS%E5%92%8CHTTP%E7%9A%84%E5%8C%BA%E5%88%AB,80%EF%BC%8C%E5%90%8E%E8%80%85%E6%98%AF443%E3%80%82</a></p><p>七层模型 四层模型<br><a href="https://blog.csdn.net/qq_39521554/article/details/79894501">https://blog.csdn.net/qq_39521554/article/details/79894501</a></p><p>流量控制 拥塞控制<br><a href="https://zhuanlan.zhihu.com/p/37379780">https://zhuanlan.zhihu.com/p/37379780</a></p><p>三次握手 四次挥手<br><a href="https://hit-alibaba.github.io/interview/basic/network/TCP.html">https://hit-alibaba.github.io/interview/basic/network/TCP.html</a></p><p><a href="https://zhuanlan.zhihu.com/p/53374516">https://zhuanlan.zhihu.com/p/53374516</a></p><p>TCP与UDP区别总结：<br>1、TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接<br>2、TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保   证可靠交付<br>3、TCP面向字节流，实际上是TCP把数据看成一连串无结构的字节流;UDP是面向报文的<br>  UDP没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如IP电话，实时视频会议等）<br>4、每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信<br>5、TCP首部开销20字节;UDP的首部开销小，只有8个字节<br>6、TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道<br>————————————————<br>版权声明：本文为CSDN博主「Li_Ning_」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/Li_Ning_/article/details/52117463">https://blog.csdn.net/Li_Ning_/article/details/52117463</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 面试 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 八股文， 面试 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>PG面试</title>
       <link href="/2022/04/26/ping-guo-ml-data-engineer-mian-jing/"/>
       <url>/2022/04/26/ping-guo-ml-data-engineer-mian-jing/</url>
@@ -249,6 +299,31 @@
         <tags>
             
             <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>八股文整理</title>
+      <link href="/2022/04/26/ba-gu-wen-zheng-li/"/>
+      <url>/2022/04/26/ba-gu-wen-zheng-li/</url>
+      
+        <content type="html"><![CDATA[<p>八股文整理</p><p>机器学习：</p><p>高频ML&#x2F;DL面试题<br><a href="https://blog.csdn.net/qq_35812205/article/details/117047412">https://blog.csdn.net/qq_35812205/article/details/117047412</a></p><p>Adam and SGD<br><a href="https://blog.csdn.net/jiachen0212/article/details/80086926">https://blog.csdn.net/jiachen0212/article/details/80086926</a></p><p>激活函数性质<br><a href="https://blog.csdn.net/qq_18310041/article/details/91042085">https://blog.csdn.net/qq_18310041/article/details/91042085</a></p><p>激活函数总结：<br><a href="https://www.jiqizhixin.com/articles/2021-02-24-7">https://www.jiqizhixin.com/articles/2021-02-24-7</a></p><p>sigmoid 激活函数梯度消失问题：<br><a href="https://blog.csdn.net/feizxiang3/article/details/101294382#:~:text=%E5%A6%82%E6%9E%9C%E6%98%AF%E5%8F%AA%E6%9C%89%E5%87%A0%E4%B8%AA,%E8%AE%A1%E7%AE%97%E5%88%9D%E5%A7%8B%E5%B1%82%E7%9A%84%E5%AF%BC%E6%95%B0%E3%80%82">https://blog.csdn.net/feizxiang3/article/details/101294382#:~:text=%E5%A6%82%E6%9E%9C%E6%98%AF%E5%8F%AA%E6%9C%89%E5%87%A0%E4%B8%AA,%E8%AE%A1%E7%AE%97%E5%88%9D%E5%A7%8B%E5%B1%82%E7%9A%84%E5%AF%BC%E6%95%B0%E3%80%82</a></p><p>GRU<br><a href="https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be">https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be</a></p><p>Activation function<br>Sigmoid vs softmax:<br>Sigmoid&#x2F; logistic function: two class classification<br>Softmax: multiclass classification,当two class 的时候，softmax 就是 sigmoid。 </p><p>交叉熵 cross entropy 解释<br><a href="https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82">https://blog.csdn.net/tsyccnh/article/details/79163834#:~:text=%E4%BA%A4%E5%8F%89%E7%86%B5%EF%BC%88cross%20entropy%EF%BC%89%E6%98%AF,%E7%90%86%E8%A7%A3%E6%9C%89%E4%BA%9B%E6%A8%A1%E7%B3%8A%EF%BC%8C%E4%B8%8D%E5%A4%9F%E6%B7%B1%E5%85%A5%E3%80%82</a></p><p>Bidirectional RNN<br><a href="https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66">https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66</a></p><p>loss functon 总结:</p><p><a href="https://zhuanlan.zhihu.com/p/58883095">https://zhuanlan.zhihu.com/p/58883095</a></p><p><a href="https://demmon-tju.github.io/2020/01/28/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/">https://demmon-tju.github.io/2020/01/28/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/</a></p><p>GBDT<br><a href="https://www.cnblogs.com/pinard/p/6140514.html#!comments">https://www.cnblogs.com/pinard/p/6140514.html#!comments</a></p><p>XGBOOST<br><a href="https://zhuanlan.zhihu.com/p/142413825">https://zhuanlan.zhihu.com/p/142413825</a><br><a href="https://zhuanlan.zhihu.com/p/87885678">https://zhuanlan.zhihu.com/p/87885678</a></p><p>GBDT XGboost面试题<br><a href="https://zhuanlan.zhihu.com/p/142817461">https://zhuanlan.zhihu.com/p/142817461</a></p><p>样本不平衡问题的处理：</p><ol><li>采样</li><li>移动阈值</li><li>调整不同类别的权重<br><a href="https://cloud.tencent.com/developer/article/1689107">https://cloud.tencent.com/developer/article/1689107</a></li></ol><p>其他：</p><p>C语言学习 作用域和生存期<br><a href="https://www.jianshu.com/p/fe2782e04401">https://www.jianshu.com/p/fe2782e04401</a></p><p>Java python 的区别<br><a href="http://bookshadow.com/weblog/2014/05/17/python-vs-java-key-differences/">http://bookshadow.com/weblog/2014/05/17/python-vs-java-key-differences/</a></p><p>Wait和sleep的区别<br><a href="https://www.jianshu.com/p/25e959037eed">https://www.jianshu.com/p/25e959037eed</a></p><p>聊聊B树和B+树 数据结构是什么  查询复杂度是多少<br><a href="https://www.cnblogs.com/nullzx/p/8729425.html#:~:text=B%E6%A0%91%E4%B9%9F%E7%A7%B0B,%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E3%80%82">https://www.cnblogs.com/nullzx/p/8729425.html#:~:text=B%E6%A0%91%E4%B9%9F%E7%A7%B0B,%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E3%80%82</a></p><p>乐观锁 悲观锁<br><a href="https://www.cnblogs.com/kismetv/p/10787228.html">https://www.cnblogs.com/kismetv/p/10787228.html</a></p><p>计算机网络：<br>Cookie, session<br><a href="https://www.zhihu.com/question/19786827">https://www.zhihu.com/question/19786827</a></p><p>客户端发送网络请求，到拿到响应的整个过程：<br><a href="https://blog.csdn.net/zjkC050818/article/details/78345819">https://blog.csdn.net/zjkC050818/article/details/78345819</a></p><p>Http和https的区别， https的原理：<br><a href="https://blog.csdn.net/xionghuixionghui/article/details/68569282#:~:text=HTTPS%E5%92%8CHTTP%E7%9A%84%E5%8C%BA%E5%88%AB,80%EF%BC%8C%E5%90%8E%E8%80%85%E6%98%AF443%E3%80%82">https://blog.csdn.net/xionghuixionghui/article/details/68569282#:~:text=HTTPS%E5%92%8CHTTP%E7%9A%84%E5%8C%BA%E5%88%AB,80%EF%BC%8C%E5%90%8E%E8%80%85%E6%98%AF443%E3%80%82</a></p><p>七层模型 四层模型<br><a href="https://blog.csdn.net/qq_39521554/article/details/79894501">https://blog.csdn.net/qq_39521554/article/details/79894501</a></p><p>流量控制 拥塞控制<br><a href="https://zhuanlan.zhihu.com/p/37379780">https://zhuanlan.zhihu.com/p/37379780</a></p><p>三次握手 四次挥手<br><a href="https://hit-alibaba.github.io/interview/basic/network/TCP.html">https://hit-alibaba.github.io/interview/basic/network/TCP.html</a></p><p><a href="https://zhuanlan.zhihu.com/p/53374516">https://zhuanlan.zhihu.com/p/53374516</a></p><p>TCP与UDP区别总结：<br>1、TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接<br>2、TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保   证可靠交付<br>3、TCP面向字节流，实际上是TCP把数据看成一连串无结构的字节流;UDP是面向报文的<br>  UDP没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如IP电话，实时视频会议等）<br>4、每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信<br>5、TCP首部开销20字节;UDP的首部开销小，只有8个字节<br>6、TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道<br>————————————————<br>版权声明：本文为CSDN博主「Li_Ning_」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/Li_Ning_/article/details/52117463">https://blog.csdn.net/Li_Ning_/article/details/52117463</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 八股文， 面试 </tag>
             
         </tags>
       

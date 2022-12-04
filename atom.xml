@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2022-09-18T09:32:05.897Z</updated>
+  <updated>2022-11-27T04:52:46.894Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -17,18 +17,98 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>优质CS公开课</title>
+    <link href="https://ginko-l.github.io/2022/11/25/you-zhi-cs-gong-kai-ke/"/>
+    <id>https://ginko-l.github.io/2022/11/25/you-zhi-cs-gong-kai-ke/</id>
+    <published>2022-11-24T16:00:00.000Z</published>
+    <updated>2022-11-27T04:52:46.894Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;优质CS公开课&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://csdiy.wiki/&quot;&gt;https://csdiy.wiki/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="公开课" scheme="https://ginko-l.github.io/categories/%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+    
+    <category term="CS, 公开课" scheme="https://ginko-l.github.io/tags/CS-%E5%85%AC%E5%BC%80%E8%AF%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MIT 6.824 Distributed System Labs 总结/踩坑</title>
+    <link href="https://ginko-l.github.io/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/"/>
+    <id>https://ginko-l.github.io/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/</id>
+    <published>2022-10-23T16:00:00.000Z</published>
+    <updated>2022-12-04T14:51:36.831Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Lecture看的Spring 2020的，Morris老师讲的，slides, notes，labs用的是最新的Spring</summary>
+        
+      
+    
+    
+    
+    <category term="自学" scheme="https://ginko-l.github.io/categories/%E8%87%AA%E5%AD%A6/"/>
+    
+    
+    <category term="MIT 6.824，distributed system" scheme="https://ginko-l.github.io/tags/MIT-6-824%EF%BC%8Cdistributed-system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YF笔试</title>
+    <link href="https://ginko-l.github.io/2022/09/24/yf-bi-shi/"/>
+    <id>https://ginko-l.github.io/2022/09/24/yf-bi-shi/</id>
+    <published>2022-09-23T16:00:00.000Z</published>
+    <updated>2022-09-24T13:10:20.541Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;YF笔试&lt;/p&gt;
+&lt;p&gt;5道编程题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;找到通话时间最长的人的名字</summary>
+        
+      
+    
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="算法题， 面试" scheme="https://ginko-l.github.io/tags/%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%8C-%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>QuickSelect 算法时间复杂度</title>
     <link href="https://ginko-l.github.io/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/"/>
     <id>https://ginko-l.github.io/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/</id>
     <published>2022-09-17T16:00:00.000Z</published>
-    <updated>2022-09-18T09:32:05.897Z</updated>
+    <updated>2022-09-18T10:06:42.097Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;QuickSelect 算法&lt;br&gt;class Solution:&lt;br&gt;    def findKthLargest(self, nums: List[int], k: int) -&amp;gt; int:&lt;br&gt;        #我自己写的QuickSelect算法&lt;br&gt;</summary>
         
       
     
@@ -274,33 +354,6 @@
   </entry>
   
   <entry>
-    <title>八股文整理</title>
-    <link href="https://ginko-l.github.io/2022/04/26/ba-gu-wen-zheng-li/"/>
-    <id>https://ginko-l.github.io/2022/04/26/ba-gu-wen-zheng-li/</id>
-    <published>2022-04-26T04:00:00.000Z</published>
-    <updated>2022-05-07T01:41:08.614Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;八股文整理&lt;/p&gt;
-&lt;p&gt;机器学习：&lt;/p&gt;
-&lt;p&gt;高频ML&amp;#x2F;DL面试题&lt;br&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="面试" scheme="https://ginko-l.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-    <category term="八股文， 面试" scheme="https://ginko-l.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87%EF%BC%8C-%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>PG面试</title>
     <link href="https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/"/>
     <id>https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/</id>
@@ -323,6 +376,33 @@
     
     
     <category term="面试" scheme="https://ginko-l.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>八股文整理</title>
+    <link href="https://ginko-l.github.io/2022/04/26/ba-gu-wen-zheng-li/"/>
+    <id>https://ginko-l.github.io/2022/04/26/ba-gu-wen-zheng-li/</id>
+    <published>2022-04-25T16:00:00.000Z</published>
+    <updated>2022-09-19T09:15:03.290Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;八股文整理&lt;/p&gt;
+&lt;p&gt;机器学习：&lt;/p&gt;
+&lt;p&gt;高频ML&amp;#x2F;DL面试题&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="八股文， 面试" scheme="https://ginko-l.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87%EF%BC%8C-%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -426,77 +506,6 @@
     
     
     <category term="OS" scheme="https://ginko-l.github.io/tags/OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>dot operator vs arrow in C</title>
-    <link href="https://ginko-l.github.io/2022/03/11/dot-operator-vs-arrow-in-c/"/>
-    <id>https://ginko-l.github.io/2022/03/11/dot-operator-vs-arrow-in-c/</id>
-    <published>2022-03-11T05:00:00.000Z</published>
-    <updated>2022-03-12T01:14:58.815Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;. (dot operator) vs -&amp;gt; (arrow) in C&lt;/p&gt;
-&lt;p&gt;. 和 -&amp;gt; 都可以用来得到struct 变量的member。&lt;br&gt;-&amp;gt;配合struct 变量的指针来引用它的member&lt;br&gt;.配合struct</summary>
-        
-      
-    
-    
-    
-    <category term="编程语言" scheme="https://ginko-l.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="C" scheme="https://ginko-l.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://ginko-l.github.io/2022/03/08/jiao-cha-shang/"/>
-    <id>https://ginko-l.github.io/2022/03/08/jiao-cha-shang/</id>
-    <published>2022-03-07T16:17:09.252Z</published>
-    <updated>2022-03-07T16:17:09.294Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;交叉熵&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>腾讯面试问题记录</title>
-    <link href="https://ginko-l.github.io/2022/03/03/mian-shi-wen-ti/"/>
-    <id>https://ginko-l.github.io/2022/03/03/mian-shi-wen-ti/</id>
-    <published>2022-03-03T05:00:00.000Z</published>
-    <updated>2022-03-04T03:35:20.114Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;面试问题 behavioural</summary>
-        
-      
-    
-    
-    
-    
-    <category term="面经" scheme="https://ginko-l.github.io/tags/%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   

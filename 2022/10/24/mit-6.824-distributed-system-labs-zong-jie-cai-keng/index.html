@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MIT 6.824 Distributed System Labs 总结/踩坑 | Ginko</title><meta name="keywords" content="自学，分布式系统"><meta name="author" content="Ginko"><meta name="copyright" content="Ginko"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Lecture看的Spring 2020的，Morris老师讲的，slides, notes，labs用的是最新的Spring 2022的.由于整个战线拉的很长，且最后才写总结，前面的lab不太记得了，很多细节也记不清了，所以简单写一下所有lab的总结。 Lab 1略 参考https:&#x2F;&#x2F;github.com&#x2F;PKUFlyingPig&#x2F;MIT6.824&#x2F;tree&#x2F;master&#x2F;src&#x2F;mr Lab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT 6.824 Distributed System Labs 总结&#x2F;踩坑">
+<meta property="og:url" content="https://ginko-l.github.io/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/index.html">
+<meta property="og:site_name" content="Ginko">
+<meta property="og:description" content="Lecture看的Spring 2020的，Morris老师讲的，slides, notes，labs用的是最新的Spring 2022的.由于整个战线拉的很长，且最后才写总结，前面的lab不太记得了，很多细节也记不清了，所以简单写一下所有lab的总结。 Lab 1略 参考https:&#x2F;&#x2F;github.com&#x2F;PKUFlyingPig&#x2F;MIT6.824&#x2F;tree&#x2F;master&#x2F;src&#x2F;mr Lab">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg">
+<meta property="article:published_time" content="2022-10-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-04T14:51:36.831Z">
+<meta property="article:author" content="Ginko">
+<meta property="article:tag" content="MIT 6.824，distributed system">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://ginko-l.github.io/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MIT 6.824 Distributed System Labs 总结/踩坑',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-04 22:51:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Ginko" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ginko</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MIT 6.824 Distributed System Labs 总结/踩坑</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-23T16:00:00.000Z" title="发表于 2022-10-24 00:00:00">2022-10-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-04T14:51:36.831Z" title="更新于 2022-12-04 22:51:36">2022-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%87%AA%E5%AD%A6/">自学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MIT 6.824 Distributed System Labs 总结/踩坑"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Lecture看的Spring 2020的，Morris老师讲的，slides, notes，labs用的是最新的Spring 2022的.<br>由于整个战线拉的很长，且最后才写总结，前面的lab不太记得了，很多细节也记不清了，所以简单写一下所有lab的总结。</p>
+<h1 id="Lab-1"><a href="#Lab-1" class="headerlink" title="Lab 1"></a>Lab 1</h1><p>略</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/PKUFlyingPig/MIT6.824/tree/master/src/mr">https://github.com/PKUFlyingPig/MIT6.824/tree/master/src/mr</a></p>
+<h1 id="Lab-2-Raft"><a href="#Lab-2-Raft" class="headerlink" title="Lab 2 Raft"></a>Lab 2 Raft</h1><p>lab2 主要是按照raft论文中的图2来实现，有些细节感觉图上也没有cover,我有些是根据自己的理解实现的。lab2 webpage里的下列几个guide链接比较有用：<br><a target="_blank" rel="noopener" href="https://thesquareplanet.com/blog/students-guide-to-raft/">https://thesquareplanet.com/blog/students-guide-to-raft/</a><br><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.824/labs/raft-locking.txt">https://pdos.csail.mit.edu/6.824/labs/raft-locking.txt</a><br><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.824/labs/raft-structure.txt">https://pdos.csail.mit.edu/6.824/labs/raft-structure.txt</a></p>
+<p>lab2整体的逻辑和架构并不太复杂，就是corner case很多，要费很多精力debug.</p>
+<p>关于sendHeartBeat(),我一开始的实现只是周期性的sendHeartBeat（按照lab要求每100ms一次）,但是测试时发现这样有点慢，无法满足lab中总的时间要求。我参阅别人的实现，将sendHeartBeat()的触发条件进行了修改。<br>触发条件1：每100ms sendHeartBeat(即原始的要求)<br>触发条件2：当Start()函数被调用并添加了新的logEntry时</p>
+<p>详情参阅我code中的BroadcastHeartBeat().</p>
+<p>关于我的LeaderCommiter(), 我先让LeaderCommiter() sleep 一小段时间, 因为我在sendHeartBeat()之后用goroutine执行LeaderCommiter, 我希望sendHeartBeat能先拿到锁更新rf.matchedIdx,然后再让LeaderCommiter()拿到锁，这样可以加快程序运行。<br>否则的话，LeaderCommiter()要多几次无效执行。不知道还有没有更elegent的方式。</p>
+<h2 id="Lab-2A"><a href="#Lab-2A" class="headerlink" title="Lab 2A"></a>Lab 2A</h2><h2 id="Lab-2B"><a href="#Lab-2B" class="headerlink" title="Lab 2B"></a>Lab 2B</h2><h2 id="Lab-2C"><a href="#Lab-2C" class="headerlink" title="Lab 2C"></a>Lab 2C</h2><h2 id="Lab-2D"><a href="#Lab-2D" class="headerlink" title="Lab 2D"></a>Lab 2D</h2><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>leader给followers传送log时一定要copy自己的log到args,不能直接用slice,否则接收的server和原始的server引用的是同一个log.</p>
+<p>ApplyLog()中，不要每次给log加锁构造applyMsg并穿递给server层，这样每次要很久才能释放锁，容易造成阻塞。较好的做法是加锁，将要apply的那部分log copy到一个applyQueue里，然后解锁。根据applyQueue里的log构造applyMsg并向server层传递。raft向server层穿递applyMsg时也不要加锁。</p>
+<p>根据Lab instruction（还是论文？记不清了）第一个command是第1个logEntry,不是第0个logEntry.以后回收log的时候，我会将snapshot包含的最后一个logEntry保留一份放在新log 最开头的位置，这样做会比较方便，而且与“第一个command是第1个logEntry”这一要求保持一致。</p>
+<h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><h1 id="Lab-3-kvraft"><a href="#Lab-3-kvraft" class="headerlink" title="Lab 3 kvraft"></a>Lab 3 kvraft</h1><p>Lab3 在lab2的基础上加上了Key Value Server(KVServer)和client。Lab 4与lab3类似，但比lab3更难，由于lab4会有较详细的记录，所以lab3不详述。</p>
+<h2 id="参考-2"><a href="#参考-2" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/Ginko-L/6.824-lab/tree/master/src/kvraft">https://github.com/Ginko-L/6.824-lab/tree/master/src/kvraft</a><br><a target="_blank" rel="noopener" href="https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab3.md">https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab3.md</a></p>
+<h1 id="Lab-4-Shardkv"><a href="#Lab-4-Shardkv" class="headerlink" title="Lab 4 Shardkv"></a>Lab 4 Shardkv</h1><p>Lab4 要求实现一个sharded KV service. 有多个replica Group（简称group）, 每个group有多个server。将data分为多个shard, 每个shard包含一个或多个key. 每个shard被assign给一个group。Lab 4 大体上与Lab 3 类似, lab3是一个group, lab4扩展到了多个group。我也实现了全部challenge。</p>
+<h2 id="Lab-4A"><a href="#Lab-4A" class="headerlink" title="Lab 4A"></a>Lab 4A</h2><h3 id="要实现的功能："><a href="#要实现的功能：" class="headerlink" title="要实现的功能：###"></a>要实现的功能：###</h3><p>shard controler(shardctrl) 负责控制shard和group的移动。shardctrl要实现四中控制功能，<br>Join(servers): 新加入一组server<br>Leave(gid): group离开(gid is group id)<br>Move(shardId, gid): 将一个shard移动到指定的group.<br>Query(cfgNum):  return the configuration that has that config number.</p>
+<p>要求每个group的负载尽可能均衡，并且shard的移动尽可能少。</p>
+<p>shardctrl 包含server和client，client发出RPC请求，由server负责实现。</p>
+<h3 id="架构："><a href="#架构：" class="headerlink" title="架构：###"></a>架构：###</h3><p>client: 主要实现向server发送Join, Leave, Move, Query RPC请求。</p>
+<p>server：<br>实现Join, Leave, Move, Query四个RPC handler。<br>每个RPC handler负责接收client传来的请求<br>RPC handler将对应的操作传递给raft层进行同步。<br>process()函数执行raft层同步后的操作，然后将操作结果传给对应的RPC handler。<br>RPC handler接收来自process()的操作结果，并将结果返回给client。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现:"></a>实现:</h3><p>我们需要</p>
+<ol>
+<li>实现Join, Leave, Move, Query四个RPC handler。</li>
+<li>实现process()函数。</li>
+</ol>
+<p>Move, Query比较简单，不赘述。<br>Join, Leave需要求每个group的负载尽可能均衡，并且shard的移动尽可能少。</p>
+<p>大致思路就是<br>算出每个group需要负载的shard数目的平均值，注意平均值可能有两个：<br>    max_shards :&#x3D; int(math.Ceil(float64(NShards) &#x2F; float64(len(Cfg.Groups))))<br>    min_shards :&#x3D; int(math.Floor(float64(NShards) &#x2F; float64(len(Cfg.Groups))))<br>算出有几个group需要负载max_shards个shard：<br>    num_max :&#x3D; NShards % len(Cfg.Groups)</p>
+<h3 id="tips："><a href="#tips：" class="headerlink" title="tips：###"></a>tips：###</h3><p>注意：Go中map iteration的顺序是不定的！</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/32751537/why-do-i-get-a-cannot-assign-error-when-setting-value-to-a-struct-as-a-value-i">https://stackoverflow.com/questions/32751537/why-do-i-get-a-cannot-assign-error-when-setting-value-to-a-struct-as-a-value-i</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/makenothing/article/details/105037977">https://blog.csdn.net/makenothing/article/details/105037977</a></p>
+<h2 id="Lab-4B"><a href="#Lab-4B" class="headerlink" title="Lab 4B"></a>Lab 4B</h2><h3 id="功能-amp-架构"><a href="#功能-amp-架构" class="headerlink" title="功能 &amp; 架构"></a>功能 &amp; 架构</h3><p>lab4B 就是要实现shardKV server和client。大体的架构与lab4A 和lab3类似。</p>
+<p>server 与 client之间：<br>server需要实现Get(key), Put(key, value), Append(key, value)，并将结果返回给client.</p>
+<p>server与controll之间：<br>server需要周期性的fetch config, 根据config来移动shard。<br>参阅我code中的FetchConfig()。</p>
+<p>server与server之间：<br>server s 需要向server t request shard sd, server t将shard sh传输给server s。server s成功将shard sd存储之后要向server t发送RemoveShard RPC, server t 收到之后需要将自己存储的shard sd置为invalid（或删除）。<br>参阅我code中的SendRequestShards(), RequestShards(), SendRemoveShards(), RemoveShards()</p>
+<p>server与自己的raft层：<br>server需要将Get, Put, Append, 移入shards(即UpdateShards), 移除shards(即RemoveShards), 更新config操作传递给raft层（raft打日志）以实现整个group server的同步。server 需要读取raft层传递来的applyMsg来执行相应操作。<br>参阅我code中的process().</p>
+<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><p>Get(), PutAppend()与lab 3类似，server需要根据client的args构造相应的operation, 将oper传到raft层，然后等待operation的执行结果，并将结果传给client。</p>
+<p>与lab3不同的是，lab4中，group leader需要周期性从controller那里fetch config(通过FetchConfig实现). group leader 需要周期性的检查自己负责的shard是否齐全（通过ShardCheck()实现），不齐全了要向前一个负责该shard的server索要该shard（通过sendRequestShard()实现）。当收到别的server发来的shard时，group leader向raft层传递UpdateShards operation, 从而将该shard同步给group里的所有server。当group leader的process()函数执行完了UpdateShards operation后，group leader 向相应的server 发送RemoveShardsArgs （通过sendRemoveShards()实现）.</p>
+<p>group leader还要处理别的server发来的RequestShardArgs(通过RequestShard() RPC handler实现，将对方server请求的shard发给它)。</p>
+<p>group leader还要处理别的server发来的RemoveShardArgs(通过RemoveShard() RPC handler实现). 当收到别的server发来的RemoveShardArgs，说明对方server已经成功将该shard存储，RemoveShard() RPC handler就会向raft层传递RemoveShards operation,从而该group的所有server都会将该shard置为invalid并删除。</p>
+<p>每个shard(在我的code里是ShardKey struct{})要包含一个status field,表示该shard的状态。<br>0：invalid,表示此server中该shard无效<br>1: valid, 表示此server中该shard有效<br>2: requiring,表示server正在向别的server请求该shard<br>3: moving，表示在此server中，该shard即将被移动到别的shard<br>详情见我的code里是ShardKey struct{}</p>
+<h3 id="tips-1"><a href="#tips-1" class="headerlink" title="tips"></a>tips</h3><ol start="0">
+<li><p>checkDuplicate()需要记录clientID, client last sequence number, 以及client last operation results. 原来的labclientID, client last sequence number, 以及client last operation results都是记录在server中（是server这个struct的一个field）,这在之前的lab是可行的，但在lab 4B不行。因为如果保存在server中，shard迁移到另一个group的时候，这些信息没有迁移到新的group中，会造成某些操作的重复执行，使得结果错误。所以要将这些信息作为一个shard的field.</p>
+</li>
+<li><p>一定要等到server s成功存储了请求的shard sd之后（即server s 的process()执行了UpdateShards的operation之后），server t才能向raft层传递RemoveShards operation。不能server t 将shard sd发动出去之后就删除shard sd,这样的话如果server s 没能成功接收shard sd或者因为什么别的原因没能将shard sd 传递到raft层时，会造成shard sd的丢失。</p>
+</li>
+<li><p>process() 中 Put, Append 成功时不要将op.Value返回给client,题目中没要求返回value给client，是我自己这样做的，这样不对，因为要保存每个client最后一个操作的结果，这样会多占用存储空间，导致lab4B Challenge 1 garbage collection无法通过！</p>
+</li>
+<li><p>SendRequestShards(), SendRemoveShards(), client的函数中对于收到回应的不同情况(e.g. wrong leader, wrong group…)的处理比较tricky, 比较保险的做法是一个group里的所有server都要发一遍RPC。</p>
+</li>
+<li><p>在和raft层交互时（e.g. kv.rf.Start(), kv.rf.GetState(), kv.rf.Snapshot()…）不要加锁,否则容易死锁。</p>
+</li>
+<li><p>InstallSnapshot之后，由于raft层的applyQueue中尚有待apply的log,会造成server接收到的新的applyMsg的commandIndex &lt;&#x3D; 已经执行过的applyMsg的commandIndex(或者 &lt;&#x3D; InstallSnapshot的Index),即command的回滚。因此，server要记录已经执行的command（即applyMsg）的commandIndex, 如果后来的commandIndex &lt;&#x3D; 已经执行过的commandIndex，不要执行该command,继续下一条command. </p>
+</li>
+<li><p>lab 4B非常吃CPU，注意程序不要产生过多的Goroutine，注意尽量少产生RPC.不要有一直不停运行的for loop。当server被kill之后，相应的goroutine要停止。for loop中sleep的时间要设置的比较合适。尽量只让group leader之间进行通信，以减少RPC。</p>
+</li>
+<li><p>记得好像select也会增加很多goroutine（还是很吃CPU？记不太清了，总之当时debug的时候根据go profiling tools改进了client的switch）。</p>
+</li>
+</ol>
+<h2 id="参考-3"><a href="#参考-3" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/Ginko-L/6.824-lab/tree/master/src/shardctrler">https://github.com/Ginko-L/6.824-lab/tree/master/src/shardctrler</a><br><a target="_blank" rel="noopener" href="https://github.com/Ginko-L/6.824-lab/tree/5695c2c22f28123a49875990d27a03c463969f71/src/shardkv">https://github.com/Ginko-L/6.824-lab/tree/5695c2c22f28123a49875990d27a03c463969f71/src/shardkv</a><br><a target="_blank" rel="noopener" href="https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab4.md">https://github.com/OneSizeFitsQuorum/MIT6.824-2021/blob/master/docs/lab4.md</a></p>
+<h2 id="Debug-技巧"><a href="#Debug-技巧" class="headerlink" title="Debug 技巧"></a>Debug 技巧</h2><h3 id="Go-profiling-tools"><a href="#Go-profiling-tools" class="headerlink" title="Go profiling tools"></a>Go profiling tools</h3><p><a target="_blank" rel="noopener" href="https://go.dev/doc/diagnostics">https://go.dev/doc/diagnostics</a><br><a target="_blank" rel="noopener" href="https://pkg.go.dev/runtime/pprof">https://pkg.go.dev/runtime/pprof</a><br><a target="_blank" rel="noopener" href="https://dev.to/agamm/how-to-profile-go-with-pprof-in-30-seconds-592a">https://dev.to/agamm/how-to-profile-go-with-pprof-in-30-seconds-592a</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Ginko</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ginko-l.github.io/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/">https://ginko-l.github.io/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ginko-l.github.io" target="_blank">Ginko</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MIT-6-824%EF%BC%8Cdistributed-system/">MIT 6.824，distributed system</a></div><div class="post_share"><div class="social-share" data-image="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/25/you-zhi-cs-gong-kai-ke/"><img class="prev-cover" src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">优质CS公开课</div></div></a></div><div class="next-post pull-right"><a href="/2022/09/24/yf-bi-shi/"><img class="next-cover" src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">YF笔试</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ginko</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab-1"><span class="toc-text">Lab 1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab-2-Raft"><span class="toc-text">Lab 2 Raft</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab-2A"><span class="toc-text">Lab 2A</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab-2B"><span class="toc-text">Lab 2B</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab-2C"><span class="toc-text">Lab 2C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab-2D"><span class="toc-text">Lab 2D</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tips"><span class="toc-text">tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83-1"><span class="toc-text">参考</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab-3-kvraft"><span class="toc-text">Lab 3 kvraft</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83-2"><span class="toc-text">参考</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lab-4-Shardkv"><span class="toc-text">Lab 4 Shardkv</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab-4A"><span class="toc-text">Lab 4A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD%EF%BC%9A"><span class="toc-text">要实现的功能：###</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%EF%BC%9A"><span class="toc-text">架构：###</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tips%EF%BC%9A"><span class="toc-text">tips：###</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab-4B"><span class="toc-text">Lab 4B</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-amp-%E6%9E%B6%E6%9E%84"><span class="toc-text">功能 &amp; 架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0-1"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tips-1"><span class="toc-text">tips</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83-3"><span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debug-%E6%8A%80%E5%B7%A7"><span class="toc-text">Debug 技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Go-profiling-tools"><span class="toc-text">Go profiling tools</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/25/you-zhi-cs-gong-kai-ke/" title="优质CS公开课"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="优质CS公开课"/></a><div class="content"><a class="title" href="/2022/11/25/you-zhi-cs-gong-kai-ke/" title="优质CS公开课">优质CS公开课</a><time datetime="2022-11-24T16:00:00.000Z" title="发表于 2022-11-25 00:00:00">2022-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/" title="MIT 6.824 Distributed System Labs 总结/踩坑"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MIT 6.824 Distributed System Labs 总结/踩坑"/></a><div class="content"><a class="title" href="/2022/10/24/mit-6.824-distributed-system-labs-zong-jie-cai-keng/" title="MIT 6.824 Distributed System Labs 总结/踩坑">MIT 6.824 Distributed System Labs 总结/踩坑</a><time datetime="2022-10-23T16:00:00.000Z" title="发表于 2022-10-24 00:00:00">2022-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/yf-bi-shi/" title="YF笔试"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="YF笔试"/></a><div class="content"><a class="title" href="/2022/09/24/yf-bi-shi/" title="YF笔试">YF笔试</a><time datetime="2022-09-23T16:00:00.000Z" title="发表于 2022-09-24 00:00:00">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/" title="QuickSelect 算法时间复杂度"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="QuickSelect 算法时间复杂度"/></a><div class="content"><a class="title" href="/2022/09/18/quickselect-suan-fa-shi-jian-fu-za-du/" title="QuickSelect 算法时间复杂度">QuickSelect 算法时间复杂度</a><time datetime="2022-09-17T16:00:00.000Z" title="发表于 2022-09-18 00:00:00">2022-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/18/jin-cheng-xian-cheng-xie-cheng/" title="进程，线程，协程"><img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="进程，线程，协程"/></a><div class="content"><a class="title" href="/2022/09/18/jin-cheng-xian-cheng-xie-cheng/" title="进程，线程，协程">进程，线程，协程</a><time datetime="2022-09-17T16:00:00.000Z" title="发表于 2022-09-18 00:00:00">2022-09-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Ginko</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
