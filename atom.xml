@@ -6,7 +6,7 @@
   <link href="https://ginko-l.github.io/atom.xml" rel="self"/>
   
   <link href="https://ginko-l.github.io/"/>
-  <updated>2023-02-07T05:41:01.602Z</updated>
+  <updated>2023-01-23T11:22:23.814Z</updated>
   <id>https://ginko-l.github.io/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>CMU 15-213 labs 总结 -- Lab3 attack lab</title>
-    <link href="https://ginko-l.github.io/2023/01/23/cmu15213lab2attacklab/"/>
-    <id>https://ginko-l.github.io/2023/01/23/cmu15213lab2attacklab/</id>
-    <published>2023-01-22T16:00:00.000Z</published>
-    <updated>2023-02-07T05:41:01.602Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;CMU 15-213 labs 总结&lt;/p&gt;
-&lt;h2 id=&quot;Lab3-attack-lab&quot;&gt;&lt;a href=&quot;#Lab3-attack-lab&quot; class=&quot;headerlink&quot; title=&quot;Lab3 attack lab&quot;&gt;&lt;/a&gt;Lab3 attack</summary>
-        
-      
-    
-    
-    
-    <category term="自学" scheme="https://ginko-l.github.io/categories/%E8%87%AA%E5%AD%A6/"/>
-    
-    
-    <category term="CMU 15-213" scheme="https://ginko-l.github.io/tags/CMU-15-213/"/>
-    
-  </entry>
   
   <entry>
     <title>CMU 15-213 labs 总结 -- Lab2 Bombs lab</title>
@@ -56,6 +30,32 @@
         
     <summary type="html">&lt;p&gt;CMU 15-213 labs 总结&lt;/p&gt;
 &lt;h2 id=&quot;Lab2-Bombs-lab&quot;&gt;&lt;a href=&quot;#Lab2-Bombs-lab&quot; class=&quot;headerlink&quot; title=&quot;Lab2 Bombs lab&quot;&gt;&lt;/a&gt;Lab2 Bombs</summary>
+        
+      
+    
+    
+    
+    <category term="自学" scheme="https://ginko-l.github.io/categories/%E8%87%AA%E5%AD%A6/"/>
+    
+    
+    <category term="CMU 15-213" scheme="https://ginko-l.github.io/tags/CMU-15-213/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CMU 15-213 labs 总结 -- Lab3 attack lab</title>
+    <link href="https://ginko-l.github.io/2023/01/23/cmu15213lab2attacklab/"/>
+    <id>https://ginko-l.github.io/2023/01/23/cmu15213lab2attacklab/</id>
+    <published>2023-01-22T16:00:00.000Z</published>
+    <updated>2023-02-07T05:41:01.602Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;CMU 15-213 labs 总结&lt;/p&gt;
+&lt;h2 id=&quot;Lab3-attack-lab&quot;&gt;&lt;a href=&quot;#Lab3-attack-lab&quot; class=&quot;headerlink&quot; title=&quot;Lab3 attack lab&quot;&gt;&lt;/a&gt;Lab3 attack</summary>
         
       
     
@@ -304,7 +304,7 @@
     <title>一些总是记不住的python语法</title>
     <link href="https://ginko-l.github.io/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/"/>
     <id>https://ginko-l.github.io/2022/05/15/yi-xie-zong-shi-ji-bu-zhu-de-python-yu-fa/</id>
-    <published>2022-05-15T04:00:00.000Z</published>
+    <published>2022-05-14T16:00:00.000Z</published>
     <updated>2022-05-15T20:31:04.599Z</updated>
     
     
@@ -375,7 +375,7 @@
     <title>hulu 面经</title>
     <link href="https://ginko-l.github.io/2022/05/08/hulu-mian-jing/"/>
     <id>https://ginko-l.github.io/2022/05/08/hulu-mian-jing/</id>
-    <published>2022-05-08T04:00:00.000Z</published>
+    <published>2022-05-07T16:00:00.000Z</published>
     <updated>2022-05-09T01:04:47.684Z</updated>
     
     
@@ -401,7 +401,7 @@
     <title>graph traversal BFS/DFS 颜色标记</title>
     <link href="https://ginko-l.github.io/2022/04/26/dfs-bfs/"/>
     <id>https://ginko-l.github.io/2022/04/26/dfs-bfs/</id>
-    <published>2022-04-26T04:00:00.000Z</published>
+    <published>2022-04-25T16:00:00.000Z</published>
     <updated>2022-05-10T00:32:33.616Z</updated>
     
     
@@ -419,32 +419,6 @@
     
     
     <category term="算法题" scheme="https://ginko-l.github.io/tags/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PG面试</title>
-    <link href="https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/"/>
-    <id>https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/</id>
-    <published>2022-04-26T04:00:00.000Z</published>
-    <updated>2022-05-07T01:42:34.585Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;PG ML&amp;#x2F;data engineer 面经&lt;/p&gt;
-&lt;p&gt;LSTM 与RNN的区别？&lt;br&gt;为什么LSTM能缓解weight decay？从激活函数的角度回答&lt;br&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="面试" scheme="https://ginko-l.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-    <category term="面试" scheme="https://ginko-l.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -476,10 +450,36 @@
   </entry>
   
   <entry>
+    <title>PG面试</title>
+    <link href="https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/"/>
+    <id>https://ginko-l.github.io/2022/04/26/ping-guo-ml-data-engineer-mian-jing/</id>
+    <published>2022-04-25T16:00:00.000Z</published>
+    <updated>2022-05-07T01:42:34.585Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;PG ML&amp;#x2F;data engineer 面经&lt;/p&gt;
+&lt;p&gt;LSTM 与RNN的区别？&lt;br&gt;为什么LSTM能缓解weight decay？从激活函数的角度回答&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="面试" scheme="https://ginko-l.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>二分查找边界问题</title>
     <link href="https://ginko-l.github.io/2022/03/21/er-fen-cha-zhao-bian-jie-wen-ti/"/>
     <id>https://ginko-l.github.io/2022/03/21/er-fen-cha-zhao-bian-jie-wen-ti/</id>
-    <published>2022-03-21T04:00:00.000Z</published>
+    <published>2022-03-20T16:00:00.000Z</published>
     <updated>2022-03-22T01:34:05.103Z</updated>
     
     
